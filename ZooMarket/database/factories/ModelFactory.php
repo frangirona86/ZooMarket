@@ -23,6 +23,12 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
+      'name' => $name = $faker->name,
+      'slug' => str_slug($name)
+    ];
+});
 
 // Creamos un model factory para los Productos
 $factory->define(App\Product::class, function (Faker\Generator $faker) {
