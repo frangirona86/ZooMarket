@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Creamos una ruta de tipo RESOURCE para los productos
+Route::resource('/products', 'ProductController');

@@ -22,3 +22,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+// Creamos un model factory para los Productos
+$factory->define(App\Product::class, function (Faker\Generator $faker) {
+    // Guardamos el faker del nombre asi lo usamos luego dentro de la funcion
+    $title = $faker->name;
+    // Devolvemos el faker de los datos
+    return [
+        'title' => $title,
+        'slug' => str_slug($title),
+        'description' => implode(' ', $faker->paragraphs(5)),
+        'price' => rand(100,2000),
+        'image' => 'https://dummyimage.com/50x50/000/fff.jpg'
+    ];
+});
