@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Product;
 use App\User;
-// use App\Category;
+use App\Category;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -18,19 +18,18 @@ class ProductsTableSeeder extends Seeder
         $users = User::all();
 
         // Traigo todas las categorias
-        // $categories = Category::all();
+        $categories = Category::all();
 
         // Recorro los usuarios y por cada usuario recorro las categorias e inserto un producto
         // Recorremos los usuarios
-        // $users->each(function($user) use($categories) {
-        $users->each(function($user) {
+        $users->each(function($user) use($categories) {
             //Recoremos las categorias
-            // $categories->each(function($category) use($user) {
+            $categories->each(function($category) use($user) {
                 factory(Product::class)->create([
-                    'user_id' => $user->id
-                    // 'category_id' => $category->id
+                    'user_id' => $user->id,
+                    'category_id' => $category->id
                 ]);
-            // });
+            });
         });
     }
 }

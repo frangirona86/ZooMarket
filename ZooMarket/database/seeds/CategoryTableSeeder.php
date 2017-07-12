@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\Category;
-use App\User;
 
 class CategoryTableSeeder extends Seeder
 {
@@ -11,15 +10,16 @@ class CategoryTableSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
       $categories = collect(['perros', 'gatos', 'aves', 'otras mascotas', 'accesorios']);
 
       $categories->each(function ($value){
-        factory(Category::Class)->create([
-        'name' => ucfirst($value),
-        'slug' => str_slug($value)
-      ]);
-    });
+          factory(Category::Class)->create([
+            'name' => ucfirst($value),
+            'slug' => str_slug($value)
+          ]);
+      });
     }
 }
