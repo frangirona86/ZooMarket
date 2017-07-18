@@ -32,6 +32,12 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Image::class, function (Faker\Generator $faker) {
+    return [
+      'description' => $faker->name
+    ];
+});
+
 // Creamos un model factory para los Productos
 $factory->define(App\Product::class, function (Faker\Generator $faker) {
     // Guardamos el faker del nombre asi lo usamos luego dentro de la funcion
@@ -42,6 +48,6 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'slug' => str_slug($title),
         'description' => implode(' ', $faker->paragraphs(5)),
         'price' => rand(100,2000),
-        'image' => 'https://dummyimage.com/50x50/000/fff.jpg'
+        'quant_sold' => rand(1,20)
     ];
 });

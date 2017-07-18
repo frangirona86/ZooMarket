@@ -16,7 +16,7 @@ class ImagesTableSeeder extends Seeder
 
       $images->each(function ($value){
           factory(Image::Class)->create([
-            'url' => $value
+            'source' => $value
           ]);
       });
     }
