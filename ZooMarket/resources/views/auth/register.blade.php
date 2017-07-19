@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 @section('content')
 <div class="container">
     <div class="row">
@@ -101,4 +101,5 @@
         </div>
     </div>
 </div>
+@include('layouts.footer')
 @endsection
