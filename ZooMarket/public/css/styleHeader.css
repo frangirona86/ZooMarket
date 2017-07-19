@@ -1,0 +1,37 @@
+#headerMainLogo {
+  width: 100%;
+  max-width: 200px;
+  min-width: 50px;
+  display: block;
+}
+
+#headerMainMenu {
+  display: none
+}
+
+
+@media only screen and (min-width : 0px) and (max-width:479px) {
+  #headerMainLogo {
+    width: 120px;
+    margin: 0 auto;
+    /*display: block;*/
+  }
+}
+
+@media only screen and (min-width : 480px) and (max-width:991px) {
+  #headerMainLogo {
+    width: 100%;
+    /*display: block;*/
+  }
+
+  .btn {
+    padding: 3px 6px;
+  }
+}
+
+/*@media only screen and (min-width : 769px) {
+  #headerMainLogo {
+    width: 100%;
+    display: block;
+  }
+}*/

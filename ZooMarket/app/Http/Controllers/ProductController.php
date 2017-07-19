@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -21,17 +22,31 @@ class ProductController extends Controller
          return view('product.list', compact('products'));
      }
 
+
      // Creamos una funcion para traernos las categorias de ese producto
-    //  public function byCategory($slug)
-    //  {
-    //      // Traemos el primer registro que traiga el Where
-    //      $products = Category::where('slug', $slug)->first()             // Traemos solo el primer registro
-    //        ->products()          // Buscamos el metodo Products (se define dentro del modelo de Categoria es una funcion que trae el producto de ESA categoria)
-    //        ->Paginate(10);       // Luego de todo esto lo paginamos
-     //
-    //      // los retornamos a la vista LIST dentro de la carpeta PRODUCTS
-    //      return view('product.list', compact('products'));
-    //  }
+     public function byCategory($slug)
+     {
+         // Traemos el primer registro que traiga el Where
+         $products = Category::where('slug', $slug)->first()             // Traemos solo el primer registro
+           ->products()          // Buscamos el metodo Products (se define dentro del modelo de Categoria es una funcion que trae el producto de ESA categoria)
+           ->Paginate(10);       // Luego de todo esto lo paginamos
+
+         // Guardamos el valor del Slug en la variable category_slug
+         $category_slug = $products->first()->Category->name;
+
+         // los retornamos a la vista LIST dentro de la carpeta PRODUCTS
+         return view('product.list', compact('products','category_slug'));
+     }
+
+     public function pruebaHeader()
+     {
+         // RETORNAMOS SOLO HEADER PARA PRUEBAS
+         return view('product.header');
+     }
+
+
+
+
 
 
     /**
