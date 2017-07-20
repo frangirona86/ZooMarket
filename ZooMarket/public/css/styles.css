@@ -2,7 +2,9 @@
 .full-height {
     height: 6vh;
 }
-
+.logoFooter{
+  filter: grayscale(100%);
+}
 .flex-center {
     align-items: center;
     display: flex;
@@ -65,7 +67,9 @@
     margin-top: 45px;
     height: 65px;
 }
-
+.img-circle{
+  width: 70%;
+}
 #myFooter .footer-copyright p {
     margin: 10px;
     color: #ccc;
