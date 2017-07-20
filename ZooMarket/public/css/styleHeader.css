@@ -1,37 +1,64 @@
+.navbar-default {
+    margin-bottom: 0;
+}
 #headerMainLogo {
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   min-width: 50px;
   display: block;
+  margin: 5px 20px;
+}
+
+#headerSearchBar {
+  width: calc(85vw - 300px);
+  height: 90px;
+  margin: 0;
+  padding: 0;
+}
+#headerSearchBar .input-group {
+  width: 100%;
+  padding-top: 45px;
+}
+#headerSearchBar span{
+  width: 10px;
 }
 
 #headerMainMenu {
-  display: none
+  height: 90px;
+}
+#headerMainMenu .dropdown .dropdown-toggle {
+  margin-top: 35px;
+  padding: 16px 22px;
+}
+
+#headerMainLogin {
+  margin-right: 20px;
+  background-color: rgb(196, 196, 196)
+}
+#headerMainLogin li a {
+  padding: 5px 10px;
 }
 
 
-@media only screen and (min-width : 0px) and (max-width:479px) {
-  #headerMainLogo {
-    width: 120px;
-    margin: 0 auto;
-    /*display: block;*/
-  }
-}
 
-@media only screen and (min-width : 480px) and (max-width:991px) {
+@media only screen and (min-width : 0px) and (max-width:767px) {
   #headerMainLogo {
-    width: 100%;
-    /*display: block;*/
-  }
-
-  .btn {
-    padding: 3px 6px;
-  }
-}
-
-/*@media only screen and (min-width : 769px) {
-  #headerMainLogo {
-    width: 100%;
+    width: 80%;
+    min-width: 50px;
     display: block;
+    margin: 0 auto;
   }
-}*/
+  #headerMainMobileMenu {
+    padding: 15px;
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (min-width : 768px) and (max-width:991px) {
+  #headerMainLogin {
+    margin-right: 0;
+  }
+  #navbarCollapse {
+    padding: 0;
+  }
+}

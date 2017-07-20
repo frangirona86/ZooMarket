@@ -1,87 +1,77 @@
-{{-- @extends('layouts.app')
-
-@section('header') --}}
-
-  <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-
-
-        <div class="row">
-          <div class="col-xxs-12 col-xs-2 bg-warning">
-            <a class="" href="{{ url('/') }}">
-              <img id="headerMainLogo" src="/images/logos/logo-zoo.png">
-            </a>
-          </div>
-          <div class="col-xxs-10 col-xs-8 bg-primary">
-            buscar
-          </div>
-          <div class="col-xxs-2 col-xs-2 bg-info">
-            <div class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                  &nbsp;
-              </ul>
-
-              <!-- Right Side Of Navbar -->
-              <ul class="nav navbar-nav navbar-right">
-                  <!-- Authentication Links -->
-                  @if (Auth::guest())
-                      <li><a href="{{ route('login') }}">Ingresa</a></li>
-                      <li><a href="{{ route('register') }}">Regístrate</a></li>
-                  @else
-                      <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                              {{ Auth::user()->name }} <span class="caret"></span>
-                          </a>
-
-                          <ul class="dropdown-menu" role="menu">
-                              <li>
-                                  <a href="{{ route('logout') }}"
-                                      onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                      Cerrar sesión
-                                  </a>
-
-                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                      {{ csrf_field() }}
-                                  </form>
-                              </li>
-                          </ul>
-                      </li>
-                  @endif
-              </ul>
-            </div>
-            <div class="navbar-header">
-              <!-- Collapsed Hamburger -->
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+  <div class="bs-example">
+      <nav class="navbar navbar-default">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button id="headerMainMobileMenu" type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
               </button>
-            </div>
+              <a href="{{ url('/') }}">
+                <img id="headerMainLogo" src="/images/logos/logo-zoo.png">
+              </a>
           </div>
-        </div>
-        <div class="row" style="background-color: rgb(80, 80, 80);">
-          <div id="headerMainMenu" class="container collapse navbar-collapse">
-            <div class="btn-group">
-              <div class="btn-group">
-                <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Dropdown <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
+          <!-- Collection of nav links, forms, and other content for toggling -->
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+              {{-- Menu principal --}}
+              <ul id="headerMainMenu" class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Menu <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="#">Inbox</a></li>
+                          <li><a href="#">Drafts</a></li>
+                          <li><a href="#">Sent Items</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Trash</a></li>
+                      </ul>
+                  </li>
+              </ul>
+
+              <form id="headerSearchBar" class="navbar-form navbar-left">
+              	<div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                      </span>
+                  </div>
+              </form>
+
+                @if (Auth::guest())
+                  <ul id="headerMainLogin" class="nav navbar-nav navbar-right">
+                    <div class="top-right links">
+                        @if (Auth::check())
+                            <a href="{{ url('/home') }}">Home</a>
+                        @else
+                            <a href="{{ url('/login') }}">Ingresa</a>
+                            <a href="{{ url('/register') }}">Regístrate</a>
+                        @endif
+                    </div>
+                  </ul>
+                @else
+                  <ul id="headerMainLogin" class="nav navbar-nav navbar-right">
+                    <div class="top-right links">
+                    {{-- <li class=""> --}}
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Cerrar sesion
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    {{-- </li> --}}
+                  </div>
                 </ul>
-              </div>
-              <button type="button" class="btn btn-primary">Button</button>
-              <button type="button" class="btn btn-primary">Another Button</button>
-            </div>
+                @endif
+
           </div>
-        </div>
-
-
-      </div>
-  </nav>
-
-
-{{-- @endsection --}}
+      </nav>
+  </div>

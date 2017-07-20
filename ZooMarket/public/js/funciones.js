@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
   // ajaxCall();
 
   // Intervalo de 30 segundos que actualiza la cantidad de usuarios del Footer
@@ -28,16 +28,18 @@ window.onload = function(){
   carousel();
 
   function carousel() {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      for (i = 0; i < x.length; i++) {
-         x[i].style.display = "none";
-      }
-      myIndex++;
-      if (myIndex > x.length) {myIndex = 1}
-      x[myIndex-1].style.display = "block";
-      setTimeout(carousel, 3000);
+
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
   }
+
   // var slideIndex = 1;
   // showDivs(slideIndex);
   //

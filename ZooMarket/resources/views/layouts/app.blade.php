@@ -4,31 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Fonts -->
 
     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <!-- Styles XXS-->
     <link href="{{ asset('css/style-xxs.css') }}" rel="stylesheet">
-
-    <!-- Styles ZooMarket-->
     <link href="{{ asset('css/styleHeader.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styleMaster.css') }}" rel="stylesheet">
 
 </head>
 <body>
 
+    @include('layouts.header')
+
     <div id="app">
-        @yield('header')
         @yield('content')
     </div>
 
+    @include('layouts.footer')
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/funciones.js') }}"></script>
 </body>
 </html>
