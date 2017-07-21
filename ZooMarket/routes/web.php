@@ -26,5 +26,5 @@ Route::resource('/products', 'ProductController');
 // Agregamos la ruta para el producto-categoria, al cual le pasamos el campo Slug, y lo llamamos con un Alias al final
 Route::get('product/category/{slug}', 'ProductController@byCategory')->name('category-product');
 
-// Creamos una ruta de tipo PRUEBA
-Route::get('/header', 'ProductController@pruebaHeader');
+// Agregamos la ruta para el producto-categoria, al cual le pasamos el campo Slug, y lo llamamos con un Alias al final
+Route::get('product/show/{id}', 'ItemController@show')->name('show-product');

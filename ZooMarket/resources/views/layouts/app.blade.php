@@ -16,6 +16,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-xxs.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styleHeader.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styleProduct.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styleMaster.css') }}" rel="stylesheet">
 
 </head>
@@ -33,3 +34,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/funciones.js') }}"></script>
+    {{-- Libreria para zoom --}}
+    <script src="{{ asset('js/elevatezoom.js') }}"></script>
+    <script> $("#jsZoom").elevateZoom();  </script>
+    <script>
+
+
+    </script>

@@ -8,7 +8,6 @@
   display: block;
   margin: 5px 20px;
 }
-
 #headerSearchBar {
   width: calc(85vw - 300px);
   height: 90px;
@@ -22,7 +21,6 @@
 #headerSearchBar span{
   width: 10px;
 }
-
 #headerMainMenu {
   height: 90px;
 }
@@ -30,7 +28,6 @@
   margin-top: 35px;
   padding: 16px 22px;
 }
-
 #headerMainLogin {
   margin-right: 20px;
   background-color: rgb(196, 196, 196)
@@ -38,7 +35,6 @@
 #headerMainLogin li a {
   padding: 5px 10px;
 }
-
 
 
 @media only screen and (min-width : 0px) and (max-width:767px) {

@@ -27,13 +27,13 @@
 
         <tbody>
           @foreach ($products as $product)
-            <tr >
+            <tr>
               <td><img class="img-responsive" width="60px" height="60px"src="{{ $product->image->source }}"></td>
               <td>{{ $product->title }}</td>
               <td><a href="{{ route('category-product', [$product->category->slug]) }}">{{ $product->category->name }}</a></td>
               <td>{{ $product->priceText() }}</td>
               <td>
-                <button class="btn btn-md btn-success">Comprar</button>
+                <a href="{{ route('show-product', [$product->id]) }}"><button class="btn btn-md btn-success">Ver</button></a>
               </td>
             </tr>
           @endforeach

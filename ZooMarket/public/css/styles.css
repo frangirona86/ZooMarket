@@ -50,6 +50,7 @@
     background-color: #3c3d41;
     color: white;
     padding-top: 30px;
+    margin-bottom: 0;
 }
 
 #myFooter .footer-copyright {
@@ -60,7 +61,7 @@
 }
 
 #myFooter .row {
-    margin-bottom: 60px;
+
 }
 
 #myFooter .navbar-brand {

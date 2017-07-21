@@ -1,3 +1,24 @@
+//-- Click on QUANTITY
+$(".btn-minus").on("click",function(){
+    var now = $(".section > div > input").val();
+    if ($.isNumeric(now)){
+        if (parseInt(now) -1 > 0){ now--;}
+        $(".section > div > input").val(now);
+    }else{
+        $(".section > div > input").val("1");
+    }
+})
+$(".btn-plus").on("click",function(){
+    var now = $(".section > div > input").val();
+    if ($.isNumeric(now)){
+        $(".section > div > input").val(parseInt(now)+1);
+    }else{
+        $(".section > div > input").val("1");
+    }
+})
+
+
+
 window.onload = function() {
   // ajaxCall();
 
@@ -28,7 +49,6 @@ window.onload = function() {
   carousel();
 
   function carousel() {
-
     var i;
     var x = document.getElementsByClassName("mySlides");
     for (i = 0; i < x.length; i++) {
@@ -66,6 +86,9 @@ window.onload = function() {
   //         x[slideIndex-1].style.display = "block";
   //         dots[slideIndex-1].className += " w3-white";
   //     }
+
+
+
 
 }
 //
