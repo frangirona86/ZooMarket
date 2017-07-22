@@ -29,19 +29,19 @@
 
     <div class="row sectionPort" >
         <div class="col-sm-4">
-            <a href="#"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/perro_portada_seccion.jpg')}}" alt="perroPortada"></a>
-            <a href="#"><button type="text" class="btn btn-default indexBoton">Perros</button></a>
-            <p>Aqui pondremos los que se puede encontrar sobre PERROS(Breve descripcion).</p>
+            <a href="{{ route('category-product', ['perros']) }}"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/perro_portada_seccion.jpg')}}" alt="perroPortada"></a>
+            <a href="{{ route('category-product', ['perros']) }}"><button type="text" class="btn btn-default indexBoton">Perros</button></a>
+            <p>Encontra todo lo que necesites para tu perro. Alimentos, jueguetes, cuchas y otros accesorios..</p>
         </div>
         <div class="col-sm-4">
-            <a href="#"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/gato_portada_seccion.jpg')}}" alt="gatoPortada"></a>
-            <a href="#"><button type="text" class="btn btn-default indexBoton">Gatos</button></a>
-            <p>Aqui pondremos los que se puede encontrar sobre GATOS(Breve descripcion).</p>
+            <a href="{{ route('category-product', ['gatos']) }}"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/gato_portada_seccion.jpg')}}" alt="gatoPortada"></a>
+            <a href="{{ route('category-product', ['gatos']) }}"><button type="text" class="btn btn-default indexBoton">Gatos</button></a>
+            <p>Encontra todo lo que necesites para tu gato. Alimentos, jueguetes, cuchas y otros accesorios.</p>
         </div>
         <div class="col-sm-4">
-            <a href="#"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/otras_mascotas_portada.jpg')}}" alt="otrasMascotas"></a>
-            <a href="#"><button type="text" class="btn btn-default indexBoton">Otras Mascotas</button></a>
-            <p>Aqui pondremos los que se puede encontrar sobre OTRAS MASCOTAS(Breve descripcion).</p>
+            <a href="{{ route('category-product', ['otras-mascotas']) }}"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/otras_mascotas_portada.jpg')}}" alt="otrasMascotas"></a>
+            <a href="{{ route('category-product', ['otras-mascotas']) }}"><button type="text" class="btn btn-default indexBoton">Otras Mascotas</button></a>
+            <p>Además, si tenes otra mascota, este es tu lugar. Consigue aqui alimentos, juguetes y/o accesorios para tu mascota.</p>
         </div>
     </div>
 

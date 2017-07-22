@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registración</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" id="myForm" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -21,6 +21,8 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+                                <p class="help-block erroresForm" id="er1">Debe completar su nombre!</p>
+                                <p class="help-block erroresForm" id="er7">Nombre ingresado Invalido!</p>
                             </div>
                         </div>
 
@@ -35,6 +37,8 @@
                                         <strong>{{ $errors->first('surname') }}</strong>
                                     </span>
                                 @endif
+                                <p class="help-block erroresForm" id="er2">Debe completar su Apellido!</p>
+                                <p class="help-block erroresForm" id="er8">Apellido ingresado Invalido!</p>
                             </div>
                         </div>
 
@@ -49,6 +53,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
+                                <p class="help-block erroresForm" id="er9">Formato invalido de mail!</p>
                             </div>
                         </div>
 
@@ -63,6 +68,7 @@
                                         <strong>{{ $errors->first('phone') }}</strong>
                                     </span>
                                 @endif
+                                <p class="help-block erroresForm" id="er4" >Debe ingresar un Telefono!</p>
                             </div>
                         </div>
 
@@ -77,6 +83,7 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                                <p class="help-block erroresForm" id="er6">Ingrese contraseña!</p>
                             </div>
                         </div>
 
@@ -85,6 +92,7 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <p class="help-block erroresForm" id="er10">Confirme contraseña!</p>
                             </div>
                         </div>
 
@@ -101,4 +109,5 @@
         </div>
     </div>
 </div>
+  <script src="{{ asset('js/register.js') }}"></script>
 @endsection

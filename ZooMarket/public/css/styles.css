@@ -1,4 +1,10 @@
 /* los que estaban en el welcome */
+.erroresForm{
+  display: none!important;
+  font-size: 0.8em;
+  color: red!important;
+  font-weight: bold;
+}
 .full-height {
     height: 6vh;
 }
@@ -167,6 +173,35 @@
  #myIndex  a:hover{
     text-decoration: none;
  }
+ .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "+"; /* "play" icon */
+        float: right;
+        color: #4fcd89;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
 
  @media screen and (max-width:988px){
    .logoFooter img{

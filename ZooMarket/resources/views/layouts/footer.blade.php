@@ -23,7 +23,7 @@
                 <div class="col-sm-2">
                     <h5>Soporte</h5>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="{{ url('/faq') }}">FAQ</a></li>
                         <li><a href="#">Mesa de Ayuda</a></li>
                         <li><a href="#">Foro</a></li>
                     </ul>

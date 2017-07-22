@@ -28,3 +28,8 @@ Route::get('product/category/{slug}', 'ProductController@byCategory')->name('cat
 
 // Agregamos la ruta para el producto-categoria, al cual le pasamos el campo Slug, y lo llamamos con un Alias al final
 Route::get('product/show/{id}', 'ItemController@show')->name('show-product');
+
+//Se crea la ruta directa a la vista de Preguntas Frecuentes
+Route::get('/faq', function () {
+    return view('faq/faq');
+});
