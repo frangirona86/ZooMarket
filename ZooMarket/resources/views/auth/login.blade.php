@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" id="myLogin">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2 loginForm">
             <div class="panel panel-default">
                 <div class="panel-heading">Iniciar sesion</div>
                 <div class="panel-body">

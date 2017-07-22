@@ -19,30 +19,30 @@
   </header>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container" id="myIndex">
 
 
     <!-- /.row -->
 
     <hr>
 
-    <div class="row" >
+    <div class="row sectionPort" >
         <div class="col-sm-4">
-            <img class="img-circle img-responsive img-center" src="{{asset('/images/index/perro_portada_seccion.jpg')}}" alt="perroPortada">
-            <h2>Perros</h2>
+            <a href="#"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/perro_portada_seccion.jpg')}}" alt="perroPortada"></a>
+            <a href="#"><button type="text" class="btn btn-default indexBoton">Perros</button></a>
             <p>Aqui pondremos los que se puede encontrar sobre PERROS(Breve descripcion).</p>
         </div>
         <div class="col-sm-4">
-            <img class="img-circle img-responsive img-center" src="{{asset('/images/index/gato_portada_seccion.jpg')}}" alt="gatoPortada">
-            <h2>Gatos</h2>
+            <a href="#"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/gato_portada_seccion.jpg')}}" alt="gatoPortada"></a>
+            <a href="#"><button type="text" class="btn btn-default indexBoton">Gatos</button></a>
             <p>Aqui pondremos los que se puede encontrar sobre GATOS(Breve descripcion).</p>
         </div>
         <div class="col-sm-4">
-            <img class="img-circle img-responsive img-center" src="{{asset('/images/index/otras_mascotas_portada.jpg')}}" alt="otrasMascotas">
-            <h2>Otras Mascotas</h2>
+            <a href="#"><img class="img-circle img-responsive img-center" src="{{asset('/images/index/otras_mascotas_portada.jpg')}}" alt="otrasMascotas"></a>
+            <a href="#"><button type="text" class="btn btn-default indexBoton">Otras Mascotas</button></a>
             <p>Aqui pondremos los que se puede encontrar sobre OTRAS MASCOTAS(Breve descripcion).</p>
         </div>
     </div>
 
-
+  <script src="{{ asset('js/funciones.js') }}"></script>
 @endsection
