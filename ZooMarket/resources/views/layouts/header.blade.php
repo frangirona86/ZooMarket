@@ -19,11 +19,29 @@
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">Menu <b class="caret"></b></a>
                       <ul class="dropdown-menu">
-                          <li><a href="#">Inbox</a></li>
-                          <li><a href="#">Drafts</a></li>
+
+
+                        @php
+                          $categoryList = App\Category::pluck('name','slug');
+                          foreach ($categoryList as $slug => $categoryName) {
+                            @endphp
+                              <li><a href="{{ route('category-product', [$slug]) }}">{{ $categoryName }}</a></li>
+                            @php
+                          }
+                        @endphp
+
+                        {{-- @if ($categoriesNameList)
+                          @foreach ($categoriesNameList as $slug => $categoryName)
+                          @endforeach
+
+                        @endif --}}
+
+                          {{-- <li><a href="#">Drafts</a></li>
                           <li><a href="#">Sent Items</a></li>
                           <li class="divider"></li>
-                          <li><a href="#">Trash</a></li>
+                          <li><a href="#">Trash</a></li> --}}
+
+
                       </ul>
                   </li>
               </ul>

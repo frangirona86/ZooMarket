@@ -37,7 +37,3 @@
     {{-- Libreria para zoom --}}
     <script src="{{ asset('js/elevatezoom.js') }}"></script>
     <script> $("#jsZoom").elevateZoom();  </script>
-    <script>
-
-
-    </script>

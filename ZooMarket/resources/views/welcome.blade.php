@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<header class="business-header" id="bannerIndex">
+
+  <header class="business-header" id="bannerIndex">
     <!-- <div class="container"> -->
         <div class="row">
 

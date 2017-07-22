@@ -209,3 +209,14 @@ body{
 footer {
     margin: 50px 0;
 }
+
+
+
+/* links del header de login y registrate */
+.top-right {
+  top: 10px;
+}
+.top-right a {
+  padding: 0 15px;
+  letter-spacing: 0;
+}
