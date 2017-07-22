@@ -12,7 +12,7 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">¿Tiene algún cargo registrarme?</a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">No, registrarse es totalmente GRATIS!! Para más información, hacé click <a href="{{url('/login')}}">AQUI</a></div>
       </div>
     </div>
