@@ -14,7 +14,7 @@
         data-zoom-image="{{ $product->image->source }}"
       />
     </div>
-    <div class="col-xs-8" style="border:0px solid gray">
+    <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
       <!-- Datos del vendedor y titulo del producto -->
       <h3>{{ $product->title }}</h3>
       <h5 style="color:#337ab7">vendido por <a href="#">Samsung</a> · <small style="color:#337ab7">({{$product->quant_sold}} ventas)</small></h5>

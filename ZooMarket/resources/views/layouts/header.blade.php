@@ -20,28 +20,15 @@
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">Menu <b class="caret"></b></a>
                       <ul class="dropdown-menu">
 
-
+                        {{-- Llenamos el menu con la lista de las categorias --}}
                         @php
-                          $categoryList = App\Category::pluck('name','slug');
+                          $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','slug');
                           foreach ($categoryList as $slug => $categoryName) {
                             @endphp
                               <li><a href="{{ route('category-product', [$slug]) }}">{{ $categoryName }}</a></li>
                             @php
                           }
                         @endphp
-
-                        {{-- @if ($categoriesNameList)
-                          @foreach ($categoriesNameList as $slug => $categoryName)
-                          @endforeach
-
-                        @endif --}}
-
-                          {{-- <li><a href="#">Drafts</a></li>
-                          <li><a href="#">Sent Items</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Trash</a></li> --}}
-
-
                       </ul>
                   </li>
               </ul>
@@ -55,40 +42,37 @@
                   </div>
               </form>
 
-                @if (Auth::guest())
-                  <ul id="headerMainLogin" class="nav navbar-nav navbar-right">
-                    <div class="top-right links">
-                        @if (Auth::check())
-                            <a href="{{ url('/home') }}">Home</a>
-                        @else
-                            <a href="{{ url('/login') }}">Ingresa</a>
-                            <a href="{{ url('/register') }}">Regístrate</a>
-                        @endif
-                    </div>
-                  </ul>
-                @else
-                  <ul id="headerMainLogin" class="nav navbar-nav navbar-right">
-                    <div class="top-right links">
-                    {{-- <li class=""> --}}
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+              <ul id="headerMainLogin" class="nav navbar-nav navbar-right">
+                <div class="top-right links">
+                  @if (Auth::guest())
+                    @if (Auth::check())
+                      <a href="{{ url('/profile') }}">Home</a>
+                    @else
+                      <a href="{{ url('/login') }}">Ingresa</a>
+                      <a href="{{ url('/register') }}">Regístrate</a>
+                    @endif
+                  @else
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a href="{{ url('profile') }}">
+                            Mi cuenta
+                        </a>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Cerrar sesion
                         </a>
 
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    Cerrar sesion
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    {{-- </li> --}}
-                  </div>
-                </ul>
-                @endif
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                      </li>
+                    </ul>
+                  @endif
+                </div>
+              </ul>
 
           </div>
       </nav>

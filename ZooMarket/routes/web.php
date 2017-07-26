@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 // Ruta Home, Tiene que estar logueado
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'HomeController@index')->name('profile');
 
 // Creamos una ruta de tipo RESOURCE para los productos
 Route::resource('/products', 'ProductController');

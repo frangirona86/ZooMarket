@@ -20,7 +20,6 @@
   border-radius:2px;
   border-right:0;
 }
-
 .btn-plus{
   cursor:pointer;
   font-size:7px;
@@ -30,6 +29,24 @@
   border:1px solid gray;
   border-radius:2px;
   border-left:0;
+}
+
+.btn-minus .glyphicon , .btn-plus .glyphicon {
+  top: 0;
+  line-height: 2;
+}
+#productDetail {
+  padding-top: 2%;
+}
+#productDetail h3 , #productDetail h5 , #productDetail h6 {
+  text-align: left;
+  padding: 5px;
+}
+#productDetail .section > div input {
+  max-width: 8%;
+}
+#productDetail .section {
+  text-align: left;
 }
 
 .section {
@@ -60,8 +77,19 @@ div.section > div > input {
 
 @media only screen and (min-width : 0px) and (max-width:767px) {
   .item-photo{
-    padding: 30px 0;
+    padding: 2% 0;
   }
+  #productDetail {
+    width: 100%;
+  }
+  #productDetail h3 , #productDetail h5 , #productDetail h6 , #productDetail .section {
+    text-align: center;
+    /*padding: 5px;*/
+  }
+  #productDetail .section {
+    margin: 0;
+  }
+
 }
 
 @media only screen and (min-width : 768px) and (max-width:991px) {
@@ -70,7 +98,7 @@ div.section > div > input {
 
 @media only screen and (min-width : 600px) {
   .item-photo{
-    padding: 50px 5px;
+    padding: 2% 5px;
   }
 }
 

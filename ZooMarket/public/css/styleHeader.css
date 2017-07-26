@@ -19,7 +19,7 @@
   padding-top: 45px;
 }
 #headerSearchBar span{
-  width: 10px;
+  width: 14px;
 }
 #headerMainMenu {
   height: 90px;
@@ -47,6 +47,59 @@
   #headerMainMobileMenu {
     padding: 15px;
     margin-top: 16px;
+  }
+}
+
+
+@media only screen and (min-width : 0px) and (max-width:767px) {
+  .top-right {
+    position: relative;
+  }
+  #headerMainMenu {
+    height: auto;
+    margin: 7px 0px;
+  }
+  #headerMainMenu .dropdown .dropdown-toggle {
+    margin-top: 0;
+  }
+  .dropdown-menu {
+    padding: 0;
+  }
+  #headerMainMenu .dropdown a {
+    padding: 12px;
+  }
+  #headerMainMenu .dropdown li {
+    border-top: 1px solid rgb(175, 175, 175);
+  }
+  #headerMainMenu li {
+    background-color: lightgrey;
+    border-radius: 0;
+  }
+  #headerSearchBar {
+    width: 100%;
+    height: auto;
+    margin: 8px 0;
+  }
+  #headerSearchBar .input-group {
+    padding-top: 0;
+  }
+  #headerMainLogin {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  #headerMainLogin div a {
+    display: block;
+    padding: 12px;
+  }
+  .navbar-form {
+    border: none;
+  }
+  .top-right {
+    top: 0;
+    right: 0;
+  }
+  .top-right li {
+    border-top: 1px solid rgb(175, 175, 175);
   }
 }
 
