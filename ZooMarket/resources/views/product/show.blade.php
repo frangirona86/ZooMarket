@@ -26,9 +26,9 @@
       <div class="section" style="padding-bottom:20px;">
         <h6 class="title-attr"><small>CANTIDAD</small></h6>
         <div>
-          <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+          <div class="btn-minus" onclick="minus()"><span class="glyphicon glyphicon-minus"></span></div>
           <input value="1" />
-          <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+          <div class="btn-plus" onclick="plus()"><span class="glyphicon glyphicon-plus"></span></div>
         </div>
       </div>
 
@@ -48,4 +48,26 @@
       </div>
     </div>
 </div>
+
+<script>
+  function plus() {
+    var now = $(".section > div > input").val();
+    if ($.isNumeric(now)){
+        $(".section > div > input").val(parseInt(now)+1);
+    }else{
+        $(".section > div > input").val("1");
+    }
+  };
+
+
+  function minus() {
+    var now = $(".section > div > input").val();
+    if ($.isNumeric(now)){
+        if (parseInt(now) -1 > 0){ now--;}
+        $(".section > div > input").val(now);
+    }else{
+        $(".section > div > input").val("1");
+    }
+  }
+</script>
 @endsection

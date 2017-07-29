@@ -33,7 +33,7 @@
   </html>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <!-- <script src="{{ asset('js/funciones.js') }}"></script> -->
+    <script src="{{ asset('js/funciones.js') }}"></script>
     {{-- Libreria para zoom --}}
     <script src="{{ asset('js/elevatezoom.js') }}"></script>
     <script> $("#jsZoom").elevateZoom();  </script>

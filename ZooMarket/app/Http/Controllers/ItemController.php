@@ -64,7 +64,11 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+      // Traemos el producto por medio del id
+      $product = Product::where('id', $id)->first();
+
+      // los retornamos a la vista SHOW dentro de la carpeta PRODUCTS el elemento
+      return view('product.edit', compact('product'));
     }
 
     /**
