@@ -15,6 +15,7 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-xxs.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/jquery-confirm.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styleHeader.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styleProduct.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stylesMaster.css') }}" rel="stylesheet">
@@ -37,3 +38,5 @@
     {{-- Libreria para zoom --}}
     <script src="{{ asset('js/elevatezoom.js') }}"></script>
     <script> $("#jsZoom").elevateZoom();  </script>
+    {{-- Libreria para botones emergentes --}}
+    <script src="{{ asset('js/jquery-confirm.js') }}"></script>

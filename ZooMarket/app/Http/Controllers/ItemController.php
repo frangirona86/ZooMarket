@@ -78,9 +78,18 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function update($id)
     public function update(Request $request, $id)
     {
-        //
+      $product = Product::find($id);
+
+      $product->title = $request->title;
+      $product->price = $request->price *100;
+      $product->description = $request->description;
+
+      $product->save();
+
+      echo "Falta hacer vista o mensaje de borrado ok";
     }
 
     /**
@@ -89,8 +98,12 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($productId,$idUser)
     {
-        //
+      // echo "producto: $productId " . "  usuario: $idUser";
+      // $product = Product::find($productId);
+      // $product->delete();
+      // return view('/profile');
+
     }
 }
