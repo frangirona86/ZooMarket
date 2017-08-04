@@ -132,63 +132,35 @@
       return false;
   }
 
-  function deleteAlert(productId, idUser) {
-      $.confirm({
-          title: '¿Esta seguro que desea borrar el producto?',
-          content: 'Si desea borrar el producto cliquee en si ',
-          type: 'red',
-          buttons: {
-              accept: {
-                  text: 'Si quiero borrarlo!',
-                  btnClass: 'btn-danger',
-                  isHidden: false, // initially not hidden
-                  isDisabled: false, // initially not disabled
-                  action: function(){
-                    // window.location.href = 'product-destroy/' + productId + ',' + idUser ;
+    function deleteAlert(productId, idUser) {
+        $.confirm({
+            title: '¿Esta seguro que desea borrar el producto?',
+            content: 'Si desea borrar el producto cliquee en si ',
+            type: 'red',
+            buttons: {
+                accept: {
+                    text: 'Si quiero borrarlo!',
+                    btnClass: 'btn-danger',
+                    isHidden: false, // initially not hidden
+                    isDisabled: false, // initially not disabled
+                    action: function(){
+                      window.location.href = 'product-destroy/' + productId + ',' + idUser ;
+                    }
+                },
 
-                    //
-                    // $productId = ?>
-                    // console.log(productId);
+                cancel: {
+                    text: 'Cerrar!',
+                    btnClass: 'btn-default',
+                    keys: ['enter'],
+                    isHidden: false, // initially not hidden
+                    isDisabled: false, // initially not disabled
+                    action: function(){
 
-
-
-                    
-
-                    window.location.href = '/profile';
-                  }
-              },
-
-              cancel: {
-                  text: 'Cerrar!',
-                  btnClass: 'btn-default',
-                  keys: ['enter'],
-                  isHidden: false, // initially not hidden
-                  isDisabled: false, // initially not disabled
-                  action: function(){
-
-                  }
-              }
-
-              // close: function () {
-              // }
-          }
-      });
-  };
-
-  // function deleteAlert() {
-  //   $.confirm({
-  //       buttons: {
-  //           hey: function(){
-  //               this.$$hello.trigger('click'); // click the other button
-  //               this.buttons.hello.setText('Helloooo'); // do whatever
-  //               this.$$hey.prop('disabled', true); // disable the current button
-  //               // or
-  //               this.buttons.hey.disable();
-  //           },
-  //       }
-  //   })
-  // };
-
+                    }
+                }
+            }
+        });
+    };
 
   </script>
 

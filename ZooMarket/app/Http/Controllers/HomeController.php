@@ -31,7 +31,7 @@ class HomeController extends Controller
       $categoriesNameList = Category::pluck('name','slug');
 
       return $categoriesNameList;
-        // return view('home');
+
     }
 
 }

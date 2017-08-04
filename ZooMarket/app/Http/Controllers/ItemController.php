@@ -100,10 +100,8 @@ class ItemController extends Controller
      */
     public function destroy($productId,$idUser)
     {
-      // echo "producto: $productId " . "  usuario: $idUser";
-      // $product = Product::find($productId);
-      // $product->delete();
-      // return view('/profile');
-
+      $product = Product::find($productId);
+      $product->delete();
+      return redirect('profile');
     }
 }
