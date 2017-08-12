@@ -3,16 +3,18 @@
 @section('content')
   <div class="container">
     {{-- <form class="form-horizontal" id="myForm" method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/product-update/{{$product->id}}">
+    <form method="POST" action="/product-store">
     {{-- <form method="POST" action="product-update/{{$product->id}}"> --}}
       {{ csrf_field() }}
       <div class="row">
         <div class="col-xs-12 col-sm-4 item-photo">
-          <img id="jsZoom" style="max-width:100%;"
-            src="{{ $product->image->source }}"
-            data-zoom-image="{{ $product->image->source }}"
-          />
+          <div class="">
+            <img style="max-width:100%;" src="/images/logos/no_image.png"/>
+            <label class="control-label">Subir foto</label>
+            <input id="input-1" type="file" class="file">
+          </div>
         </div>
+
         <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
 
           {{-- Titulo --}}
@@ -21,7 +23,7 @@
               Titulo:
             </div>
             <div class="col-xxs-12 col-xs-9 col-md-8">
-              <input class="form-control" type="text" name="title" value="{{ $product->title }}">
+              <input class="form-control" type="text" name="title" value="">
             </div>
           </div>
 
@@ -31,7 +33,7 @@
               Precio:
             </div>
             <div class="col-xxs-12 col-xs-9 col-md-2">
-              <input class="form-control" type="text" name="price" value="{{ $product->price }}">
+              <input class="form-control" type="text" name="price" value="">
             </div>
           </div>
 
@@ -41,7 +43,7 @@
               Descripción:
             </div>
             <div class="col-xxs-12 col-xs-9 col-md-8">
-              <textarea class="form-control" name="description" rows="9">{{ $product->description }}</textarea>
+              <textarea class="form-control" name="description" rows="9"></textarea>
             </div>
           </div>
 

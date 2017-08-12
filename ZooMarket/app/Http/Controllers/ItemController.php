@@ -24,7 +24,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.store');
     }
 
     /**
@@ -35,7 +35,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('product.store');
     }
 
     /**
@@ -48,10 +48,8 @@ class ItemController extends Controller
     {
         // Traemos el producto por medio del id
         $product = Product::where('id', $id)->first();
-
         // Guardamos el tipo de formulario, si es Show, Edit o Delete
         $typeOfOperation = 'show';
-
         // los retornamos a la vista SHOW dentro de la carpeta PRODUCTS el elemento
         return view('product.show', compact('product','typeOfOperation'));
     }
@@ -66,8 +64,7 @@ class ItemController extends Controller
     {
       // Traemos el producto por medio del id
       $product = Product::where('id', $id)->first();
-
-      // los retornamos a la vista SHOW dentro de la carpeta PRODUCTS el elemento
+      // los retornamos a la vista edit dentro de la carpeta PRODUCTS el elemento
       return view('product.edit', compact('product'));
     }
 
@@ -89,7 +86,7 @@ class ItemController extends Controller
 
       $product->save();
 
-      echo "Falta hacer vista o mensaje de borrado ok";
+      return redirect('profile');
     }
 
     /**

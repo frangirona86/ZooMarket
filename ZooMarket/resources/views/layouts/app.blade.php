@@ -19,6 +19,7 @@
     <link href="{{ asset('css/styleHeader.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styleProduct.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stylesMaster.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/stylesSearch.css') }}" rel="stylesheet">
 
 </head>
 <body>

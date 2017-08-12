@@ -80,6 +80,9 @@
               @if ($productUser)
                 <div class="panel panel-default">
                   <div class="panel-heading">Mis productos</div>
+                  <div style="padding: 15px 5px 5px 15px;">
+                    <a href="product-create/"><button class="btn btn-md btn-primary">Nuevo producto</button></a>
+                  </div>
                   <div class="panel-body">
                     <div class="responsive-table">
                       <table class="table table-hover">
@@ -102,9 +105,8 @@
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->priceText() }}</td>
                                 <td>
-                                  <a href="{{ route('edit-product', [$product->id]) }}"><button class="btn btn-sm btn-warning">Editar</button></a>
+                                  <a ><button onclick="editAlert({{$product->id}})" class="btn btn-sm btn-warning">Editar</button></a>
                                   <a ><button onclick="deleteAlert({{$product->id}} , {{Auth::user()->id}})" class="btn btn-sm btn-danger">Borrar</button></a>
-
                                 </td>
                               </tr>
                             @endforeach
@@ -124,22 +126,14 @@
   </div>
 
   <script>
-  function ConfirmDelete() {
-    var x = confirm("Are you sure you want to delete?");
-    if (x)
-      return true;
-    else
-      return false;
-  }
-
     function deleteAlert(productId, idUser) {
         $.confirm({
             title: '¿Esta seguro que desea borrar el producto?',
-            content: 'Si desea borrar el producto cliquee en si ',
+            content: '',
             type: 'red',
             buttons: {
                 accept: {
-                    text: 'Si quiero borrarlo!',
+                    text: 'Si, quiero borrarlo!',
                     btnClass: 'btn-danger',
                     isHidden: false, // initially not hidden
                     isDisabled: false, // initially not disabled
@@ -147,16 +141,40 @@
                       window.location.href = 'product-destroy/' + productId + ',' + idUser ;
                     }
                 },
-
                 cancel: {
-                    text: 'Cerrar!',
+                    text: 'Cerrar',
                     btnClass: 'btn-default',
                     keys: ['enter'],
                     isHidden: false, // initially not hidden
                     isDisabled: false, // initially not disabled
-                    action: function(){
+                    action: function(){}
+                }
+            }
+        });
+    };
 
+    function editAlert(productId) {
+        $.confirm({
+            title: '¿Esta seguro que desea editar el producto?',
+            content: '',
+            type: 'orange',
+            buttons: {
+                accept: {
+                    text: 'Si, quiero editarlo',
+                    btnClass: 'btn-warning',
+                    isHidden: false, // initially not hidden
+                    isDisabled: false, // initially not disabled
+                    action: function(){
+                      window.location.href = 'product-edit/' + productId;
                     }
+                },
+                cancel: {
+                    text: 'Cerrar',
+                    btnClass: 'btn-default',
+                    keys: ['enter'],
+                    isHidden: false, // initially not hidden
+                    isDisabled: false, // initially not disabled
+                    action: function(){}
                 }
             }
         });

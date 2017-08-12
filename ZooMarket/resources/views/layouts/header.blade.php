@@ -35,10 +35,41 @@
 
               <form id="headerSearchBar" class="navbar-form navbar-left">
               	<div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search">
+                      {{-- Barra de busqueda --}}
+                      <input id="input-search" type="search" autocomplete="off" class="form-control" placeholder="Buscar">
+                      <div class="content-search">
+                        <div class="content-table">
+                          <table id="table">
+                            <thead>
+                              <tr>
+                                <td></td>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr> <td><a href="#">Inicio</a></td> </tr>
+                              <tr> <td><a href="#">css</a></td> </tr>
+                              <tr> <td><a href="#">index</a></td> </tr>
+                              <tr> <td><a href="#">php</a></td> </tr>
+                              <tr> <td><a href="#">html</a></td> </tr>
+                              <tr> <td><a href="#">jueos</a></td> </tr>
+                              <tr> <td><a href="#">call of duty</a></td> </tr>
+                              <tr> <td><a href="#">need for speed</a></td> </tr>
+                              <tr> <td><a href="#">mario</a></td> </tr>
+                              <tr> <td><a href="#">pap</a></td> </tr>
+                              <tr> <td><a href="#">pop</a></td> </tr>
+                              <tr> <td><a href="#">carrear</a></td> </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+
                       <span class="input-group-btn">
-                          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                       </span>
+
+
+
                   </div>
               </form>
 
@@ -77,3 +108,26 @@
           </div>
       </nav>
   </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  {{-- <script src="js/search.js"></script> --}}
+  <script>
+    var buscador = $("#table").DataTable();
+    $("#input-search").keyup(function(){
+      console.log($("#input-search").val());
+
+
+
+
+
+        //
+        // buscador.search($(this).val()).draw();
+        //
+        // if ($("#input-search").val() == ""){
+        //     $(".content-search").fadeOut(300);
+        // }else{
+        //     $(".content-search").fadeIn(300);
+        // }
+    })
+  </script>

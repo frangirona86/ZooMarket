@@ -1,4 +1,6 @@
 window.onload = function() {
+
+
   // ajaxCall();
 
   // Intervalo de 30 segundos que actualiza la cantidad de usuarios del Footer

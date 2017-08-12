@@ -30,7 +30,8 @@ Route::get('product/category/{slug}', 'ProductController@byCategory')->name('cat
 Route::get('product/show/{id}', 'ItemController@show')->name('show-product');
 
 // Agregamos la ruta para el producto-categoria, al cual le pasamos el campo Slug, y lo llamamos con un Alias al final
-Route::get('product/edit/{id}', 'ItemController@edit')->name('edit-product');
+Route::get('product-create/', 'ItemController@create');
+Route::get('product-edit/{id}', 'ItemController@edit')->name('edit-product');
 Route::post('product-update/{id}', 'ItemController@update');
 Route::get('product-destroy/{productId},{idUser}', 'ItemController@destroy')->name('product-destroy');
 
