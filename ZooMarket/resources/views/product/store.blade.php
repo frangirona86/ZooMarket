@@ -2,16 +2,14 @@
 
 @section('content')
   <div class="container">
-    {{-- <form class="form-horizontal" id="myForm" method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/product-store">
-    {{-- <form method="POST" action="product-update/{{$product->id}}"> --}}
+    <form method="POST" action="/product-store" enctype="multipart/form-data">
       {{ csrf_field() }}
       <div class="row">
         <div class="col-xs-12 col-sm-4 item-photo">
           <div class="">
             <img style="max-width:100%;" src="/images/logos/no_image.png"/>
             <label class="control-label">Subir foto</label>
-            <input id="input-1" type="file" class="file">
+            <input id="image" class="form-control" type="file" name="image">
           </div>
         </div>
 
@@ -34,6 +32,26 @@
             </div>
             <div class="col-xxs-12 col-xs-9 col-md-2">
               <input class="form-control" type="text" name="price" value="">
+            </div>
+          </div>
+
+          {{-- Cantidad a vender --}}
+          <div class="row">
+            <div class="col-xxs-12 col-xs-3 col-md-2">
+              Cantidad:
+            </div>
+            <div class="col-xxs-12 col-xs-9 col-md-2">
+              <input class="form-control" type="text" name="quant_sold" value="1">
+            </div>
+          </div>
+
+          {{-- Categoria --}}
+          <div class="row">
+            <div class="col-xxs-12 col-xs-3 col-md-2">
+              Categoria:
+            </div>
+            <div class="col-xxs-12 col-xs-9 col-md-2">
+              <input class="form-control" type="text" name="category_id" value="">
             </div>
           </div>
 
