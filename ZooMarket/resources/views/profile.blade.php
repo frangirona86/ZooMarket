@@ -8,19 +8,15 @@
                   <div class="panel-heading">Mi cuenta</div>
                   <div class="panel-body">
 
+                    @php
+                      $imagePath = App\Image::where('id', Auth::user()->image_id)->first();
+                      $imagePath = $imagePath->source;
+                    @endphp
+
                     <div class="col-xxs-12 col-xs-3 col-md-3 col-md-offset-1">
-                      <img src="images/profile/default.jpg" class="img-thumbnail">
+                      <img src="{{$imagePath}}" class="img-thumbnail">
+                      <input id="image" class="form-control" type="file" name="image">
                     </div>
-
-
-                    {{-- <div class="col-xs-12 col-sm-4 item-photo">
-                      <div class="">
-                        <img style="max-width:100%;" src="/images/logos/no_image.png"/>
-                        <label class="control-label">Subir foto</label>
-                        <input id="image" class="form-control" type="file" name="image">
-                      </div>
-                    </div> --}}
-
 
                     <div class="col-xxs-12 col-xs-9 col-md-8">
                       {{-- Nombre --}}
