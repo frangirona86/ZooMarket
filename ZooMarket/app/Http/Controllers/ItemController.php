@@ -47,59 +47,31 @@ class ItemController extends Controller
         $imagePath = 'images/products/';
         $image->move($imagePath, $imageName);
 
+        //Obtenemos el ultimo Id guardado y le sumamos uno
+        $lastIdImage = Image::all()->max('id');
+        $insertIdImage = $lastIdImage + 1;
+
         //Guardamos la imagen en la tabla images
         Image::create([
-            'source'      => $imagePath . $imageName,
-            'description' => 'Image uploaded from product ' . $lastIdProduct
+            'id'          => $insertIdImage,
+            'source'      => '/' . $imagePath . $imageName,
+            'description' => 'Image uploaded from product ' . $insertIdImage
         ]);
 
-
-
-
-      //
-      // $entry = new \App\File();
-      // $entry->mime = $file->getClientMimeType();
-      // $entry->original_filename = $file->getClientOriginalName();
-      // $entry->filename = $file->getFilename().'.'.$extension;
-      // $entry->save();
-      //
-      // $product = new Product();
-      // $product->file_id=$entry->id;
-      // $product->name=Request::input('name');
-      // $product->description=Request::input('description');
-      // $product->price=Request::input('price');
-      // $product->imageurl=Request::input('imageurl');
-      // $product->save();
-      //
-      // return redirect('/products');
-
-
-      // get current time and append the upload file extension to it,
-      // then put that name to $photoName variable.
-      // dd(time().'.'.$request->image->getClientOriginalExtension());
-
-      /*
-      talk the select file and move it public directory and make avatars
-      folder if doesn't exsit then give it that unique name.
-      */
-      // $request->user_photo->move(public_path('avatars'), $photoName);
-
-
-
-
-
-        // $product = new Product(array(
-        //   'title'         => $request->get('title'),
-        //   'slug'          => str_slug($request->get('title')),
-        //   'description'   => $request->get('description'),
-        //   'price'         => $request->get('price'),
-        //   'quant_sold'    => $request->get('quant_sold'),
-        //   'user_id'       => Auth::user()->id,
-        //   'category_id'   => $request->get('category_id'),
-        //   'image_id'      => '1'
-        // ));
-        // $product->save();
-        // return redirect('profile');
+        //Creamos y guardamos un nuevo producto
+        $productTitle = $request->get('title');
+        $product = new Product(array(
+          'title'         => $productTitle,
+          'slug'          => str_slug($productTitle),
+          'description'   => $request->get('description'),
+          'price'         => $request->get('price') * 100,
+          'quant_sold'    => $request->get('quant_sold'),
+          'user_id'       => Auth::user()->id,
+          'category_id'   => $request->get('category_id'),
+          'image_id'      => $insertIdImage
+        ));
+        $product->save();
+        return redirect('profile');
     }
 
     /**

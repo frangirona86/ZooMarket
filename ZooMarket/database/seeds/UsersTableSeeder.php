@@ -17,8 +17,9 @@ class UsersTableSeeder extends Seeder
             'email'      => 'infoleod@gmail.com',
             'password'   => bcrypt('123456'),
             'name'       => 'Leonardo',
-            'surname'    =>' D\'Orto',
-            'phone'      => '+541144085698'
+            'surname'    => 'D\'Orto',
+            'phone'      => '+541144085698',
+            'image_id'   => '1'
         ]);
 
         // Creamos 10 usuarios mas con el factory

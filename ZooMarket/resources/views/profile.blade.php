@@ -11,6 +11,17 @@
                     <div class="col-xxs-12 col-xs-3 col-md-3 col-md-offset-1">
                       <img src="images/profile/default.jpg" class="img-thumbnail">
                     </div>
+
+
+                    {{-- <div class="col-xs-12 col-sm-4 item-photo">
+                      <div class="">
+                        <img style="max-width:100%;" src="/images/logos/no_image.png"/>
+                        <label class="control-label">Subir foto</label>
+                        <input id="image" class="form-control" type="file" name="image">
+                      </div>
+                    </div> --}}
+
+
                     <div class="col-xxs-12 col-xs-9 col-md-8">
                       {{-- Nombre --}}
                       <div class="col-xxs-12 col-xs-3 col-md-4 col-md-offset-1 well-sm">

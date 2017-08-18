@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('password');
+            $table->integer('image_id')->unsigned();                              // Guardamos el id de la imagen sin signo
+            $table->foreign('image_id')->references('id')->on('images');          // Creamos la relacion con la tabla de imagen            
             $table->rememberToken();
             $table->timestamps();
         });
