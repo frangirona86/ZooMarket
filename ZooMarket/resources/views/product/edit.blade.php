@@ -25,6 +25,16 @@
             </div>
           </div>
 
+          {{-- Cambiar Imagen --}}
+          <div class="row">
+            <div class="col-xxs-12 col-xs-3 col-md-2">
+            Imagen:
+            </div>
+            <div class="col-xxs-12 col-xs-9 col-md-6">
+                <input id="image" class="form-control" type="file" name="image">
+
+              </div>
+            </div>
           {{-- Precio --}}
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
@@ -86,8 +96,6 @@
               <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Guardar cambios</button>
             </div>
           </div>
-
-
         </div>
       </div>
     </form>
@@ -113,4 +121,5 @@
     }
   }
 </script>
+
 @endsection

@@ -114,6 +114,26 @@ class ItemController extends Controller
     // public function update($id)
     public function update(Request $request, $id)
     {
+      //busco el ID del Product para cargar el nombre de la imageName
+
+      $idProduct = Product::find($id);
+
+      //Guardamos la imagen en el directorio publico con el nombre del producto
+      $image = $request->image;
+      $imageName = $idProduct . '.' . $image->getClientOriginalExtension();
+      $imagePath = 'images/products/';
+      $image->move($imagePath, $imageName);
+
+      //Obtenemos el ultimo Id guardado y le sumamos uno
+      $lastIdImage = Image::all()->max('id');
+      $insertIdImage = $lastIdImage + 1;
+
+      //Guardamos la imagen en la tabla images
+      Image::create([
+          'id'          => $insertIdImage,
+          'source'      => '/' . $imagePath . $imageName,
+          'description' => 'Image uploaded from product ' . $insertIdImage
+      ]);
       $product = Product::find($id);
 
       $product->title = $request->title;
