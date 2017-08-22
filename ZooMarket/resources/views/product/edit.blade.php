@@ -56,12 +56,12 @@
                 Categoria:
               </div>
               <div class="col-xxs-12 col-xs-9 col-md-4">
-                <select class="form-control" name="">
+                <select class="form-control" name="category_id">
                   @php
                     $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','id');
                     foreach ($categoryList as $id => $categoryName) {
                       @endphp
-                          <option value="" name="category_id">{{$categoryName}}</option>
+                          <option value="{{$id}}" name="">{{$categoryName}}</option>
                       @php
                     }
                   @endphp
