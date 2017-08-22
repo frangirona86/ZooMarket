@@ -40,8 +40,14 @@
             <div class="col-xxs-12 col-xs-3 col-md-2">
               Cantidad:
             </div>
-            <div class="col-xxs-12 col-xs-9 col-md-2">
-              <input class="form-control" type="text" name="quant_sold" value="1">
+            <div class="col-xxs-12 col-xs-9 col-md-6">
+              <div class="section">
+                <div>
+                  <div class="btn-minus" onclick="minus()"><span class="glyphicon glyphicon-minus"></span></div>
+                  <input value="1" name="quant_sold"/>
+                  <div class="btn-plus" onclick="plus()"><span class="glyphicon glyphicon-plus"></span></div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -50,8 +56,17 @@
             <div class="col-xxs-12 col-xs-3 col-md-2">
               Categoria:
             </div>
-            <div class="col-xxs-12 col-xs-9 col-md-2">
-              <input class="form-control" type="text" name="category_id" value="">
+            <div class="col-xxs-12 col-xs-9 col-md-4">
+              <select class="form-control" name="">
+                @php
+                  $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','slug');
+                  foreach ($categoryList as $slug => $categoryName) {
+                    @endphp
+                        <option value="" name="category_id">{{ $categoryName }}</option>
+                    @php
+                  }
+                @endphp
+              </select>
             </div>
           </div>
 

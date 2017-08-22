@@ -118,6 +118,8 @@ class ItemController extends Controller
 
       $product->title = $request->title;
       $product->price = $request->price *100;
+      $product->quant_sold = $request->quant_sold;
+      $product->category_id=$request->category_id;
       $product->description = $request->description;
 
       $product->save();

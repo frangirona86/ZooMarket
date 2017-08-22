@@ -86,7 +86,7 @@
 
               @if ($productUser)
                 <div class="panel panel-default">
-                  <div class="panel-heading">Mis productos</div>
+                  <div class="panel-heading">Los productos de {{ Auth::user()->name }}</div>
                   <div style="padding: 15px 5px 5px 15px;">
                     <a href="product-create/"><button class="btn btn-md btn-primary">Nuevo producto</button></a>
                   </div>
@@ -99,6 +99,7 @@
                             <th>Title</th>
                             <th>Category</th>
                             <th>Price</th>
+                            <th>Amount</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -111,6 +112,7 @@
                                 <td>{{ $product->title }}</td>
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->priceText() }}</td>
+                                <td>{{ $product->quant_sold }}</td>
                                 <td>
                                   <a ><button onclick="editAlert({{$product->id}})" class="btn btn-sm btn-warning">Editar</button></a>
                                   <a ><button onclick="deleteAlert({{$product->id}} , {{Auth::user()->id}})" class="btn btn-sm btn-danger">Borrar</button></a>

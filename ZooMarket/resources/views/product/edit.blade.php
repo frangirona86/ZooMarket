@@ -35,6 +35,39 @@
             </div>
           </div>
 
+            {{-- Cantidad--}}
+            <div class="row">
+              <div class="col-xxs-12 col-xs-3 col-md-2">
+                Cantidad:
+              </div>
+              <div class="col-xxs-12 col-xs-9 col-md-6">
+                <div class="section">
+                  <div>
+                    <div class="btn-minus" onclick="minus()"><span class="glyphicon glyphicon-minus"></span></div>
+                    <input value="{{ $product->quant_sold }}" name="quant_sold"/>
+                    <div class="btn-plus" onclick="plus()"><span class="glyphicon glyphicon-plus"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{-- Categoria --}}
+            <div class="row">
+              <div class="col-xxs-12 col-xs-3 col-md-2">
+                Categoria:
+              </div>
+              <div class="col-xxs-12 col-xs-9 col-md-4">
+                <select class="form-control" name="">
+                  @php
+                    $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','id');
+                    foreach ($categoryList as $id => $categoryName) {
+                      @endphp
+                          <option value="" name="category_id">{{$categoryName}}</option>
+                      @php
+                    }
+                  @endphp
+                </select>
+              </div>
+            </div>
           {{-- Descripcion --}}
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
