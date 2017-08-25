@@ -8,7 +8,7 @@
                 <div class="panel-heading">Cambiar Password</div>
                 <div class="panel-body">
 
-                <form method="post" class="form-horizontal" id="myForm"  action="/users-edit/">
+                <form method="post" class="form-horizontal" id="myForm"  action="/change-pass-change">
 
                            {{csrf_field()}}
 

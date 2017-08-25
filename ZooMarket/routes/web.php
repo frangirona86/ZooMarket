@@ -42,5 +42,5 @@ Route::get('/faq', function () {
 });
 
 //Cambiar Contraseña
-Route::get('users-change', 'UserController@showChangePass')->name('users-change');
-Route::post('')
+Route::get('change-pass-show', 'UserController@showChangePass')->name('change-pass-show');
+Route::post('/change-pass-change' , 'UserController@UpdateChangePass')->name('change-pass-change');

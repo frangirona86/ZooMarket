@@ -13,8 +13,9 @@ class UserController extends Controller
     return view('users.change');
     }
 
-  public function updatePassword(Request $request)
+  public function UpdateChangePass(Request $request)
   {
+      
     //  if($request('npassword') === $request('cnpassword'))
     // {
     //       if (Hash::check($request->mypassword, Auth::user()->password)){
@@ -25,7 +26,7 @@ class UserController extends Controller
     //  {
     //      return redirect('user/password')->with('message', 'Credenciales incorrectas');
     //  }
-    dd();
+    dd('funciono');
   }
 
 }
