@@ -102,6 +102,17 @@
   </div>
 
 <script>
+// document.getElementById("upload").onchange = function() {
+//   var reader = new FileReader(); //instanciamos el objeto de la api FileReader
+//
+//   reader.onload = function(e) {
+//     //
+//
+//     document.getElementById("image").src = e.target.result;
+//   };
+//
+//   // read the image file as a data URL.
+//   reader.readAsDataURL(this.files[0]);
   function plus() {
     var now = $(".section > div > input").val();
     if ($.isNumeric(now)){

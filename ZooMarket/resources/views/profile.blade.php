@@ -56,7 +56,7 @@
                         Contraseña:
                       </div>
                       <div class="col-xxs-12 col-xs-8 col-md-7 well-sm">
-                        <a>
+                        <a >
                           <button class="btn btn-sm btn-primary">
                               Cambiar contraseña (armar)
                           </button>
@@ -74,6 +74,7 @@
                           </button>
                         </a>
                       </div>
+
                     </div>
 
                   </div>
@@ -86,7 +87,7 @@
 
               @if ($productUser)
                 <div class="panel panel-default">
-                  <div class="panel-heading">Los productos de {{ Auth::user()->name }}</div>
+                  <div class="panel-heading">Los productos de </div>
                   <div style="padding: 15px 5px 5px 15px;">
                     <a href="product-create/"><button class="btn btn-md btn-primary">Nuevo producto</button></a>
                   </div>

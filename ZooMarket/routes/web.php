@@ -40,3 +40,6 @@ Route::post('product-store/', 'ItemController@store');
 Route::get('/faq', function () {
     return view('faq/faq');
 });
+
+//Cambiar Contraseña
+Route::post('user/change', 'UserController@updatePassword');

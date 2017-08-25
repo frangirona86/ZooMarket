@@ -145,7 +145,7 @@ class ItemController extends Controller
       $product->save();
 
       return redirect('profile');
-    }
+    } 
 
     /**
      * Remove the specified resource from storage.
