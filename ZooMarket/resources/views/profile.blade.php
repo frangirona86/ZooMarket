@@ -56,9 +56,9 @@
                         Contraseña:
                       </div>
                       <div class="col-xxs-12 col-xs-8 col-md-7 well-sm">
-                        <a >
+                        <a href="{{ route('users-change') }}">
                           <button class="btn btn-sm btn-primary">
-                              Cambiar contraseña (armar)
+                              Cambiar contraseña
                           </button>
                         </a>
                       </div>

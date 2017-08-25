@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="panel-heading">Cambiar Password</div>
                 <div class="panel-body">
 
-                <form method="post" class="form-horizontal" id="myForm"  action="{{url('user/change')}}">
+                <form method="post" class="form-horizontal" id="myForm"  action="/users-edit/">
 
                            {{csrf_field()}}
 
@@ -19,12 +19,12 @@
                            </div>
                            <div class="form-group">
                                     <label for="password">Introduce tu nuevo password:</label>
-                                        <input type="password" name="password" class="form-control">
+                                        <input type="password" name="npassword" class="form-control">
                                     <div class="text-danger">{{$errors->first('password')}}</div>
                            </div>
                            <div class="form-group">
                                       <label for="mypassword">Confirma tu nuevo password:</label>
-                                      <input type="password" name="password_confirmation" class="form-control">
+                                      <input type="password" name="cnpassword" class="form-control">
                            </div>
                                     <button type="submit" class="btn btn-primary">Cambiar mi password</button>
                   </form>
