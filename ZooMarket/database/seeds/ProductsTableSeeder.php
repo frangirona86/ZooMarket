@@ -22,7 +22,7 @@ class ProductsTableSeeder extends Seeder
         $categories = Category::all();
 
         // Traigo todas las imagenes
-        $images = Image::where('id', '>', 1)->get();
+        $images = Image::where([['id', '>', 1],['id', '<', 7]])->get();
 
         // Recorro los usuarios y por cada usuario recorro las categorias e inserto un producto
         // Recorremos los usuarios
