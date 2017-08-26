@@ -12,7 +12,13 @@
                       $imagePath = App\Image::where('id', Auth::user()->image_id)->first();
                       $imagePath = $imagePath->source;
                     @endphp
-
+                    @if (Session::has('status'))
+                    <hr />
+                    <div class='text-success'>
+                        {{Session::get('status')}}
+                    </div>
+                    <hr />
+                    @endif
                     <div class="col-xxs-12 col-xs-3 col-md-3 col-md-offset-1">
                       <img src="{{$imagePath}}" class="img-thumbnail">
                       <input id="image" class="form-control" type="file" name="image">

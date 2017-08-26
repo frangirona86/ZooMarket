@@ -7,7 +7,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Cambiar Password</div>
                 <div class="panel-body">
-
+                  @if (Session::has('message'))
+                   <div class="text-danger">
+                   {{Session::get('message')}}
+                   </div>
+                  @endif
+                  <hr />
                 <form method="post" class="form-horizontal" id="myForm"  action="/change-pass-change">
 
                            {{csrf_field()}}
@@ -20,11 +25,11 @@
                            <div class="form-group">
                                     <label for="password">Introduce tu nuevo password:</label>
                                         <input type="password" name="npassword" class="form-control">
-                                    <div class="text-danger">{{$errors->first('password')}}</div>
+                                    <div class="text-danger">{{$errors->first('npassword')}}</div>
                            </div>
                            <div class="form-group">
                                       <label for="mypassword">Confirma tu nuevo password:</label>
-                                      <input type="password" name="cnpassword" class="form-control">
+                                      <input type="password" name="npassword_confirmation" class="form-control">
                            </div>
                                     <button type="submit" class="btn btn-primary">Cambiar mi password</button>
                   </form>
