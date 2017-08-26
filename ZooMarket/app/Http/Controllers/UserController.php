@@ -44,7 +44,7 @@ class UserController extends Controller
          }
          else
          {
-             return redirect('change-pass-show')->with('message', 'Credenciales incorrectas');
+             return redirect('change-pass-show')->with('message', 'Contraseña Incorrecta');
          }
      }
   }
