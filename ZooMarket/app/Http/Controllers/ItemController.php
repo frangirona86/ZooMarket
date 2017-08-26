@@ -118,25 +118,30 @@ class ItemController extends Controller
 
       $idProduct = Product::find($id);
 
-      //Guardamos la imagen en el directorio publico con el nombre del producto
-      $image = $request->image;
+      if ($request->image) {
 
-      $imageName = $idProduct->id . '.' . $image->getClientOriginalExtension();
-      //getClientOriginalExtension
-      $imagePath = 'images/products/';
+        //Guardamos la imagen en el directorio publico con el nombre del producto
+        $image = $request->image;
+        $imageName = $idProduct->id . '.' . $image->getClientOriginalExtension();
+        $imagePath = 'images/products/';
+        $image->move($imagePath, $imageName);
 
-      $image->move($imagePath, $imageName);
+        //Obtenemos el ultimo Id guardado y le sumamos uno
+        $lastIdImage = Image::all()->max('id');
+        $insertIdImage = $lastIdImage + 1;
 
-      //Obtenemos el ultimo Id guardado y le sumamos uno
-      $lastIdImage = Image::all()->max('id');
-      $insertIdImage = $lastIdImage + 1;
-
-      //Guardamos la imagen en la tabla images
-      Image::create([
+        //Guardamos la imagen en la tabla images
+        Image::create([
           'id'          => $insertIdImage,
           'source'      => '/' . $imagePath . $imageName,
           'description' => 'Image uploaded from product ' . $insertIdImage
-      ]);
+        ]);
+
+      } else {
+        //Mantenemos el mismo ID Imagen
+        $insertIdImage = $idProduct->image_id;
+      }
+
       $product = Product::find($id);
 
       $product->title = $request->title;

@@ -19,6 +19,7 @@ Auth::routes();
 
 // Ruta Home, Tiene que estar logueado
 Route::get('/profile', 'HomeController@index')->name('profile');
+Route::get('/product-list', 'HomeController@product')->name('product-list');
 Route::get('/profile-edit', 'HomeController@edit')->name('profile-edit');
 
 // Creamos una ruta de tipo RESOURCE para los productos

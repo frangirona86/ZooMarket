@@ -17,11 +17,11 @@
 
         <thead>
           <tr>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Action</th>
+            <th>Imagen</th>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th></th>
           </tr>
         </thead>
 

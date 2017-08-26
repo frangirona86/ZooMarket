@@ -4,91 +4,10 @@
   <div class="container">
       <div class="row">
           <div class="col-xs-12">
-              <div class="panel panel-default">
-                  <div class="panel-heading">Mi cuenta</div>
-                  <div class="panel-body">
-
-                    @php
-                      $imagePath = App\Image::where('id', Auth::user()->image_id)->first();
-                      $imagePath = $imagePath->source;
-                    @endphp
-                    @if (Session::has('status'))
-                    <hr />
-                    <div class='text-success'>
-                        {{Session::get('status')}}
-                    </div>
-                    <hr />
-                    @endif
-                    <div class="col-xxs-12 col-xs-3 col-md-3 col-md-offset-1">
-                      <img src="{{$imagePath}}" class="img-thumbnail">
-                      <input id="image" class="form-control" type="file" name="image">
-                    </div>
-
-                    <div class="col-xxs-12 col-xs-9 col-md-8">
-                      {{-- Nombre --}}
-                      <div class="col-xxs-12 col-xs-3 col-md-4 col-md-offset-1 well-sm">
-                        Nombre:
-                      </div>
-                      <div class="col-xxs-12 col-xs-9 col-md-7 well-sm">
-                        {{ Auth::user()->name }}
-                      </div>
-
-                      {{-- Apellido --}}
-                      <div class="col-xxs-12 col-xs-3 col-md-4 col-md-offset-1 well-sm">
-                        Apellido:
-                      </div>
-                      <div class="col-xxs-12 col-xs-9 col-md-7 well-sm">
-                        {{ Auth::user()->surname }}
-                      </div>
-
-                      {{-- email --}}
-                      <div class="col-xxs-12 col-xs-3 col-md-4 col-md-offset-1 well-sm">
-                        E-Mail:
-                      </div>
-                      <div class="col-xxs-12 col-xs-9 col-md-7 well-sm">
-                        {{ Auth::user()->email }}
-                      </div>
-
-                      {{-- Telefono --}}
-                      <div class="col-xxs-12 col-xs-3 col-md-4 col-md-offset-1 well-sm">
-                        Telefono:
-                      </div>
-                      <div class="col-xxs-12 col-xs-9 col-md-7 well-sm">
-                        {{ Auth::user()->phone }}
-                      </div>
-
-                      {{-- Cambiar contraseña --}}
-                      <div class="col-xxs-12 col-xs-4 col-md-4 col-md-offset-1 well-sm">
-                        Contraseña:
-                      </div>
-                      <div class="col-xxs-12 col-xs-8 col-md-7 well-sm">
-                        <a href="{{ route('change-pass-show') }}">
-                          <button class="btn btn-sm btn-primary">
-                              Cambiar contraseña
-                          </button>
-                        </a>
-                      </div>
-
-                      {{-- Cambiar Imagen --}}
-                      <div class="col-xxs-12 col-xs-4 col-md-4 col-md-offset-1 well-sm">
-                        Imagen de perfil:
-                      </div>
-                      <div class="col-xxs-12 col-xs-8 col-md-7 well-sm">
-                        <a>
-                          <button class="btn btn-sm btn-primary">
-                              Cambiar imagen (armar)
-                          </button>
-                        </a>
-                      </div>
-
-                    </div>
-
-                  </div>
-              </div>
 
               {{-- Cargamos la lista con los productos de ese usuario --}}
               @php
-                $productUser = App\Product::where('user_id', Auth::user()->id)->paginate(10);
+                $productUser = App\Product::where('user_id', Auth::user()->id)->paginate(15);
               @endphp
 
               @if ($productUser)

@@ -26,6 +26,10 @@ class HomeController extends Controller
     {
       return view('profile');
     }
+    public function product()
+    {
+      return view('product.product-list');
+    }
     public function edit()
     {
       return view('profile-edit');
