@@ -8,11 +8,28 @@
       {{ csrf_field() }}
       <div class="row">
         <div class="col-xs-12 col-sm-4 item-photo">
-          <img id="jsZoom" style="max-width:100%;"
-            src="{{ $product->image->source }}"
-            data-zoom-image="{{ $product->image->source }}"
-          />
+          <div>
+            <div id="changeImageDiv">
+              <img id="jsZoom" style="max-width:100%;"
+                src="{{ $product->image->source }}"
+                data-zoom-image="{{ $product->image->source }}"
+              />
+            </div>
+            <div>
+              <input id="imgInp" class="form-control" type="file" name="image">
+            </div>
+          </div>
         </div>
+
+
+
+        <form id="form1" runat="server">
+          <input type='file' id="imgInp" />
+          <img id="blah" src="#" alt="your image" />
+        </form>
+
+
+
         <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
 
           {{-- Titulo --}}
@@ -26,15 +43,15 @@
           </div>
 
           {{-- Cambiar Imagen --}}
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
             Imagen:
             </div>
             <div class="col-xxs-12 col-xs-9 col-md-6">
-                <input id="image" class="form-control" type="file" name="image">
-
-              </div>
+              <input id="image" class="form-control" type="file" name="image">
             </div>
+          </div> --}}
+
           {{-- Precio --}}
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
@@ -45,39 +62,41 @@
             </div>
           </div>
 
-            {{-- Cantidad--}}
-            <div class="row">
-              <div class="col-xxs-12 col-xs-3 col-md-2">
-                Cantidad:
-              </div>
-              <div class="col-xxs-12 col-xs-9 col-md-6">
-                <div class="section">
-                  <div>
-                    <div class="btn-minus" onclick="minus()"><span class="glyphicon glyphicon-minus"></span></div>
-                    <input value="{{ $product->quant_sold }}" name="quant_sold"/>
-                    <div class="btn-plus" onclick="plus()"><span class="glyphicon glyphicon-plus"></span></div>
-                  </div>
+          {{-- Cantidad--}}
+          <div class="row">
+            <div class="col-xxs-12 col-xs-3 col-md-2">
+              Cantidad:
+            </div>
+            <div class="col-xxs-12 col-xs-9 col-md-6">
+              <div class="section">
+                <div>
+                  <div class="btn-minus" onclick="minus()"><span class="glyphicon glyphicon-minus"></span></div>
+                  <input value="{{ $product->quant_sold }}" name="quant_sold"/>
+                  <div class="btn-plus" onclick="plus()"><span class="glyphicon glyphicon-plus"></span></div>
                 </div>
               </div>
             </div>
-            {{-- Categoria --}}
-            <div class="row">
-              <div class="col-xxs-12 col-xs-3 col-md-2">
-                Categoria:
-              </div>
-              <div class="col-xxs-12 col-xs-9 col-md-4">
-                <select class="form-control" name="category_id">
-                  @php
-                    $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','id');
-                    foreach ($categoryList as $id => $categoryName) {
-                      @endphp
-                          <option value="{{$id}}" name="">{{$categoryName}}</option>
-                      @php
-                    }
-                  @endphp
-                </select>
-              </div>
+          </div>
+
+          {{-- Categoria --}}
+          <div class="row">
+            <div class="col-xxs-12 col-xs-3 col-md-2">
+              Categoria:
             </div>
+            <div class="col-xxs-12 col-xs-9 col-md-4">
+              <select class="form-control" name="category_id">
+                @php
+                  $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','id');
+                  foreach ($categoryList as $id => $categoryName) {
+                    @endphp
+                        <option value="{{$id}}" name="">{{$categoryName}}</option>
+                    @php
+                  }
+                @endphp
+              </select>
+            </div>
+          </div>
+
           {{-- Descripcion --}}
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
@@ -131,6 +150,40 @@
         $(".section > div > input").val("1");
     }
   }
+
+
+
+
+
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $('#blah').attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+  $("#imgInp").change(function(){
+      readURL(this);
+  });
+
+
+
+
+  // function changeImage() {
+  //   var img = $("#image").val();
+  //   if (img){
+  //     document.getElementById("jsZoom").src = img;
+  //     //document.getElementById("jsZoom").data-zoom-image = "https://www.google.com/fit/static/images/fit-logo-fallback-anim.png";
+  //   }else{
+  //     document.getElementById("jsZoom").src = "https://www.google.com/fit/static/images/fit-logo-fallback-anim.png";
+  //     //document.getElementById("jsZoom").data-zoom-image = "https://www.google.com/fit/static/images/fit-logo-fallback-anim.png";
+  //   }
+  // }
 </script>
 
 @endsection

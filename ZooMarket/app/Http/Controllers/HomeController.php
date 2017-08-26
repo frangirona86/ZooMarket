@@ -26,12 +26,14 @@ class HomeController extends Controller
     {
       return view('profile');
     }
+    public function edit()
+    {
+      return view('profile-edit');
+    }
     public function category()
     {
       $categoriesNameList = Category::pluck('name','slug');
-
       return $categoriesNameList;
-
     }
 
 }
