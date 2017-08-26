@@ -120,8 +120,11 @@ class ItemController extends Controller
 
       //Guardamos la imagen en el directorio publico con el nombre del producto
       $image = $request->image;
-      $imageName = $idProduct . '.' . $image->getClientOriginalExtension();
+
+      $imageName = $idProduct->id . '.' . $image->getClientOriginalExtension();
+      //getClientOriginalExtension
       $imagePath = 'images/products/';
+
       $image->move($imagePath, $imageName);
 
       //Obtenemos el ultimo Id guardado y le sumamos uno
@@ -141,11 +144,12 @@ class ItemController extends Controller
       $product->quant_sold = $request->quant_sold;
       $product->category_id=$request->category_id;
       $product->description = $request->description;
+      $product->image_id = $insertIdImage;
 
       $product->save();
 
       return redirect('profile');
-    } 
+    }
 
     /**
      * Remove the specified resource from storage.

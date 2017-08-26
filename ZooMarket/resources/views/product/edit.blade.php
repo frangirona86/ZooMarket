@@ -3,17 +3,14 @@
 @section('content')
   <div class="container">
     {{-- <form class="form-horizontal" id="myForm" method="POST" action="{{ route('register') }}"> --}}
-    <form method="POST" action="/product-update/{{$product->id}}">
+    <form method="POST" action="/product-update/{{$product->id}}" enctype="multipart/form-data">
     {{-- <form method="POST" action="product-update/{{$product->id}}"> --}}
       {{ csrf_field() }}
       <div class="row">
         <div class="col-xs-12 col-sm-4 item-photo">
           <div>
             <div id="changeImageDiv">
-              <img id="jsZoom" style="max-width:100%;"
-                src="{{ $product->image->source }}"
-                data-zoom-image="{{ $product->image->source }}"
-              />
+              <img id="imgView" style="max-width:100%;" src="{{ $product->image->source }}"/>
             </div>
             <div>
               <input id="imgInp" class="form-control" type="file" name="image">
@@ -21,17 +18,7 @@
           </div>
         </div>
 
-
-
-        <form id="form1" runat="server">
-          <input type='file' id="imgInp" />
-          <img id="blah" src="#" alt="your image" />
-        </form>
-
-
-
         <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
-
           {{-- Titulo --}}
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
@@ -121,17 +108,7 @@
   </div>
 
 <script>
-// document.getElementById("upload").onchange = function() {
-//   var reader = new FileReader(); //instanciamos el objeto de la api FileReader
-//
-//   reader.onload = function(e) {
-//     //
-//
-//     document.getElementById("image").src = e.target.result;
-//   };
-//
-//   // read the image file as a data URL.
-//   reader.readAsDataURL(this.files[0]);
+  //Funcion MAS
   function plus() {
     var now = $(".section > div > input").val();
     if ($.isNumeric(now)){
@@ -140,7 +117,7 @@
         $(".section > div > input").val("1");
     }
   };
-
+  //Funcion Menos
   function minus() {
     var now = $(".section > div > input").val();
     if ($.isNumeric(now)){
@@ -150,40 +127,20 @@
         $(".section > div > input").val("1");
     }
   }
-
-
-
-
-
+  //Funcion Cambiar source imagen img
   function readURL(input) {
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-              $('#blah').attr('src', e.target.result);
-          }
-
-          reader.readAsDataURL(input.files[0]);
+    console.log(input.files);
+    if (input.files && input.files[0])
+    {
+      var reader = new FileReader();
+      reader.onload = function (e)
+      {
+        $('#imgView').attr('src', e.target.result);
       }
+      reader.readAsDataURL(input.files[0]);
+    }
   }
 
-  $("#imgInp").change(function(){
-      readURL(this);
-  });
-
-
-
-
-  // function changeImage() {
-  //   var img = $("#image").val();
-  //   if (img){
-  //     document.getElementById("jsZoom").src = img;
-  //     //document.getElementById("jsZoom").data-zoom-image = "https://www.google.com/fit/static/images/fit-logo-fallback-anim.png";
-  //   }else{
-  //     document.getElementById("jsZoom").src = "https://www.google.com/fit/static/images/fit-logo-fallback-anim.png";
-  //     //document.getElementById("jsZoom").data-zoom-image = "https://www.google.com/fit/static/images/fit-logo-fallback-anim.png";
-  //   }
-  // }
 </script>
 
 @endsection

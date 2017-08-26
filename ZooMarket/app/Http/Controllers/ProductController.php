@@ -44,11 +44,6 @@ class ProductController extends Controller
          return view('product.header');
      }
 
-
-
-
-
-
     /**
      * Show the form for creating a new resource.
      *
