@@ -74,7 +74,6 @@
           <div class="panel panel-default">
             <div style="padding: 15px 5px 5px 15px;">
               <div class="row">
-                <a href="{{ route('profile-update') }}" class="btn btn-primary active" role="button">Actualizar Datos</a>
                 <a href="{{ route('profile') }}" class="btn btn-success" role="button">Volver al Perfil</a>
               </div>
             </div>
