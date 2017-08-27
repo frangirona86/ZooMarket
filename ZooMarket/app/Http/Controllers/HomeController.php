@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -41,17 +42,17 @@ class HomeController extends Controller
       return $categoriesNameList;
     }
     public function update(Request $request){
-      dd('funciono');
-      // $user = Auth::user();
-      //
-      // $user->name= $request->name;
-      // $user->surname= $request->surname;
-      // $user->email= $request->email;
-      // $user->phone= $request->phone;
-      //
-      // $user->save();
-      //
-      // return redirect('profile');
+
+      $user = Auth::user();
+
+      $user->name= $request->name;
+      $user->surname= $request->surname;
+      $user->email= $request->email;
+      $user->phone= $request->phone;
+
+      $user->save();
+
+      return redirect('profile');
     }
 
 }

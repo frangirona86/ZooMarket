@@ -2,8 +2,8 @@
 
 @section('content')
   <div class="container">
-    <form class="form-horizontal" action="/profile-update" method="POST" action="/profile-edit">
-
+    <form class="form-horizontal" action="/profile-update" method="POST">
+      {{csrf_field()}}
       <div class="row">
           <div class="col-xs-12">
               <div class="panel panel-default">
@@ -63,8 +63,7 @@
                             <input class="form-control" type="text" name="phone" value="{{ Auth::user()->phone }}">
                       </div>
                     </div>
-
-
+                      <button type="submit" class="btn btn-primary active">Actualizar Datos</button>
                   </form>
 
 
