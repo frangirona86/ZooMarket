@@ -16,8 +16,8 @@
                     @endphp
 
                     <div class="col-xxs-12 col-xs-3 col-md-3 col-md-offset-1">
-                      <img src="{{$imagePath}}" class="img-thumbnail">
-                      <!-- <input id="image" class="form-control" type="file" name="image"> -->
+                      <img id="imgView" src="{{$imagePath}}" class="img-thumbnail">
+                      <input id="imgInp" class="form-control" type="file" name="image">
                     </div>
 
                     <div class="col-xxs-12 col-xs-9 col-md-8">
@@ -64,15 +64,24 @@
                       </div>
                     </div>
 
-                      <a href="{{ route('profile-update') }}" class="btn btn-primary active" role="button">Actualizar Datos</a>
 
                   </form>
 
-                    <a href="{{ route('profile') }}" class="btn btn-success" role="button">Volver al Perfil</a>
 
                   </div>
               </div>
           </div>
+
+          <div class="panel panel-default">
+            <div style="padding: 15px 5px 5px 15px;">
+              <div class="row">
+                <a href="{{ route('profile-update') }}" class="btn btn-primary active" role="button">Actualizar Datos</a>
+                <a href="{{ route('profile') }}" class="btn btn-success" role="button">Volver al Perfil</a>
+              </div>
+            </div>
+          </div>
+
+
       </div>
     </div>
 </div>
@@ -130,6 +139,22 @@
             }
         });
     };
+
+    //Funcion Cambiar source imagen img
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e)
+        {
+          if (e.target.result) {
+            $('#imgView').attr('src', e.target.result);
+          }
+        }
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        $('#imgView').attr('src', 'images/profile/default.jpg');
+      }
+    }
 
   </script>
 

@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/profile', 'HomeController@index')->name('profile');
 Route::get('profile-edit', 'HomeController@edit')->name('profile-edit');
 Route::get('/profile-update', 'HomeController@uptdate')->name('profile-update');
+Route::get('/product-list', 'HomeController@product')->name('product-list');
 
 // Creamos una ruta de tipo RESOURCE para los productos
 Route::resource('/products', 'ProductController');

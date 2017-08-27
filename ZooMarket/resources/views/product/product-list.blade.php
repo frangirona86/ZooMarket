@@ -12,10 +12,14 @@
 
               @if ($productUser)
                 <div class="panel panel-default">
-                  <div class="panel-heading">Mis Productos</div>
+                  <div class="panel-heading">Crear nuevo producto</div>
                   <div style="padding: 15px 5px 5px 15px;">
                     <a href="product-create/"><button class="btn btn-md btn-primary">Nuevo producto</button></a>
                   </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">Mis Productos</div>
                   <div class="panel-body">
                     <div class="responsive-table">
                       <table class="table table-hover">

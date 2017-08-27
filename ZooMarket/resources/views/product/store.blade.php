@@ -8,8 +8,7 @@
         <div class="col-xs-12 col-sm-4 item-photo">
           <div class="">
             <img id="imgView" style="max-width:100%;" src="/images/logos/no_image.png"/>
-            <label class="control-label">Subir foto</label>
-            <input id="imgInp" class="form-control" type="file" name="image">
+            <input id="imgInp" class="form-control" type="file" name="image" >
           </div>
         </div>
 
@@ -118,16 +117,18 @@
   //Funcion Cambiar source imagen img
   function readURL(input) {
     console.log(input.files);
-    if (input.files && input.files[0])
-    {
+    if (input.files && input.files[0]) {
       var reader = new FileReader();
       reader.onload = function (e)
       {
         $('#imgView').attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
+    } else {
+      $('#imgView').attr('src', '/images/logos/no_image.png');
     }
   }
+
 
 </script>
 @endsection

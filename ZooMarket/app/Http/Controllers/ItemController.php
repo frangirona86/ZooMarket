@@ -71,7 +71,7 @@ class ItemController extends Controller
           'image_id'      => $insertIdImage
         ));
         $product->save();
-        return redirect('profile');
+        return redirect('product-list');
     }
 
     /**
@@ -153,7 +153,7 @@ class ItemController extends Controller
 
       $product->save();
 
-      return redirect('profile');
+      return redirect('product-list');
     }
 
     /**

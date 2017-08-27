@@ -127,18 +127,19 @@
         $(".section > div > input").val("1");
     }
   }
+
   //Funcion Cambiar source imagen img
   function readURL(input) {
-    console.log(input.files);
-    if (input.files && input.files[0])
-    {
+    if (input.files && input.files[0]) {
       var reader = new FileReader();
       reader.onload = function (e)
       {
-        $('#imgView').attr('src', e.target.result);
+        if (e.target.result) {
+          $('#imgView').attr('src', e.target.result);
+        }
       }
       reader.readAsDataURL(input.files[0]);
-    }
+    } 
   }
 
 </script>
