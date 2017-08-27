@@ -42,7 +42,33 @@ class HomeController extends Controller
       return $categoriesNameList;
     }
     public function update(Request $request){
+      //busco el ID del User para cargar el nombre de la imageName
 
+    $idUser = Auth::user()->id;
+
+    if ($request->image) {
+
+      //Guardamos la imagen en el directorio publico con el nombre del usuario
+      $image = $request->image;
+      $imageName = $idUser->id . '.' . $image->getClientOriginalExtension();
+      $imagePath = 'images/profile/';
+      $image->move($imagePath, $imageName);
+
+      //Obtenemos el ultimo Id guardado y le sumamos uno
+      $lastIdImage = Image::all()->max('id');
+      $insertIdImage = $lastIdImage + 1;
+
+      //Guardamos la imagen en la tabla images
+      Image::create([
+        'id'          => $insertIdImage,
+        'source'      => '/' . $imagePath . $imageName,
+        'description' => 'Image uploaded from user ' . $insertIdImage
+      ]);
+
+    } else {
+      //Mantenemos el mismo ID Imagen
+      $insertIdImage = $idUser->image_id;
+    }
       $user = Auth::user();
 
       $user->name= $request->name;

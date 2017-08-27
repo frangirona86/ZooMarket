@@ -74,7 +74,10 @@
           <div class="panel panel-default">
             <div style="padding: 15px 5px 5px 15px;">
               <div class="row">
+<<<<<<< HEAD
                 <button type="submit" class="btn btn-primary active">Actualizar Datos</button>
+=======
+>>>>>>> 6182b82bb2ed1ae29b7f3727a0dbd25e4cbc1843
                 <a href="{{ route('profile') }}" class="btn btn-success" role="button">Volver al Perfil</a>
               </div>
             </div>
