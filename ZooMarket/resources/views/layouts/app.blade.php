@@ -21,6 +21,7 @@
     <link href="{{ asset('css/stylesMaster.css') }}" rel="stylesheet">
     <link href="{{ asset('css/stylesSearch.css') }}" rel="stylesheet">
 
+
 </head>
 <body>
 
@@ -34,10 +35,16 @@
   </body>
   </html>
     <!-- Scripts -->
+    {{-- <script src="{{ asset('js/jquery.js') }}"></script> --}}
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
+
+
+
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/funciones.js') }}"></script>
     {{-- Libreria para zoom --}}
     <script src="{{ asset('js/elevatezoom.js') }}"></script>
     <script> $("#jsZoom").elevateZoom();  </script>
     {{-- Libreria para botones emergentes --}}
-    <script src="{{ asset('js/jquery-confirm.js') }}"></script>
+    {{-- <script src="{{ asset('js/jquery-confirm.js') }}"></script> --}}

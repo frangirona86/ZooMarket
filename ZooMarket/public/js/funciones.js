@@ -22,6 +22,21 @@ window.onload = function() {
       setTimeout(carousel, 3000);
     }
   }
+
+  // var buscador = document.getElementsByClassName(".tableClass").DataTable();
+  // document.getElementById("#input-search").keyup(function(){
+  //
+  //   console.log(document.getElementById("#input-search").val());
+  //
+  //   buscador.search(document.getElementById(this).val()).draw();
+  //
+  //   if (document.getElementById("#input-search").val() == ""){
+  //       document.getElementsByClassName(".content-search").fadeOut(300);
+  //   }else{
+  //       document.getElementsByClassName(".content-search").fadeIn(300);
+  //   }
+  // })
+
   // ajaxCall();
 
   // Intervalo de 30 segundos que actualiza la cantidad de usuarios del Footer

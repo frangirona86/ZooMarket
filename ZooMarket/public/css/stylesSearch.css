@@ -19,25 +19,23 @@
     overflow-x: hidden;
 }
 
-/*.sorting_1 {
+
+/* Buscador del header */
+.sorting_1 {
   text-align: left;
 }
-
-.content-table table{
+#content-table-header table{
     width: 100%;
 }
-
-tbody tr td a{
+#tbody-Header tr td a{
     display: block;
     padding: 10px;
     color: white;
     text-decoration: none;
 }
-
-tbody tr td a:hover{
+#tbody-Header tr td a:hover{
     background: rgba(0,0,0,0.3);
 }
-
 #table_length, #table_filter, #table_info, #table_paginate{
     display: none;
-}*/
+}

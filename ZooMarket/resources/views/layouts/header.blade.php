@@ -1,3 +1,5 @@
+
+
   <div class="bs-example">
       <nav class="navbar navbar-default">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,7 +40,7 @@
                       {{-- Barra de busqueda --}}
                       <input id="input-search" type="search" autocomplete="off" class="form-control" placeholder="Buscar">
                       <div class="content-search">
-                        <div class="content-table">
+                        <div id="content-table-header" class="content-table">
                           <table id="table">
                             <thead>
                               <tr>
@@ -46,19 +48,18 @@
                               </tr>
                             </thead>
 
-                            <tbody>
-                              <tr> <td><a href="#">Inicio</a></td> </tr>
-                              <tr> <td><a href="#">css</a></td> </tr>
-                              <tr> <td><a href="#">index</a></td> </tr>
-                              <tr> <td><a href="#">php</a></td> </tr>
-                              <tr> <td><a href="#">html</a></td> </tr>
-                              <tr> <td><a href="#">jueos</a></td> </tr>
-                              <tr> <td><a href="#">call of duty</a></td> </tr>
-                              <tr> <td><a href="#">need for speed</a></td> </tr>
-                              <tr> <td><a href="#">mario</a></td> </tr>
-                              <tr> <td><a href="#">pap</a></td> </tr>
-                              <tr> <td><a href="#">pop</a></td> </tr>
-                              <tr> <td><a href="#">carrear</a></td> </tr>
+                            <tbody id="tbody-Header">
+
+                              {{-- Llenamos el buscador con los productos --}}
+                              @php
+                                $productList = App\Product::orderBy('title', 'ASC')->pluck('title','id');
+                                foreach ($productList as $id => $productTitle) {
+                                  @endphp
+                                    <tr id="tr-Header"> <td><a href="{{ route('show-product', [$id]) }}">{{ $productTitle }}</a></td> </tr>
+                                  @php
+                                }
+                              @endphp
+
                             </tbody>
                           </table>
                         </div>
@@ -115,25 +116,20 @@
       </nav>
   </div>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery.dataTables.min.js"></script>
-  {{-- <script src="js/search.js"></script> --}}
+  <script src="{{ asset('js/jquery.js') }}"></script>
+  <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('js/search.js') }}"></script>
+
   <script>
     var buscador = $("#table").DataTable();
     $("#input-search").keyup(function(){
-      console.log($("#input-search").val());
 
+      buscador.search($(this).val()).draw();
 
-
-
-
-        //
-        // buscador.search($(this).val()).draw();
-        //
-        // if ($("#input-search").val() == ""){
-        //     $(".content-search").fadeOut(300);
-        // }else{
-        //     $(".content-search").fadeIn(300);
-        // }
+      if ($("#input-search").val() == ""){
+          $(".content-search").fadeOut(300);
+      }else{
+          $(".content-search").fadeIn(300);
+      }
     })
   </script>
