@@ -47,4 +47,4 @@
     <script src="{{ asset('js/elevatezoom.js') }}"></script>
     <script> $("#jsZoom").elevateZoom();  </script>
     {{-- Libreria para botones emergentes --}}
-    {{-- <script src="{{ asset('js/jquery-confirm.js') }}"></script> --}}
+    <script src="{{ asset('js/jquery-confirm.js') }}"></script>
