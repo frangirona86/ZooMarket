@@ -44,6 +44,6 @@
             <p>Además, si tenes otra mascota, este es tu lugar. Consigue aqui alimentos, juguetes y/o accesorios para tu mascota.</p>
         </div>
     </div>
-
   <script src="{{ asset('js/funciones.js') }}"></script>
+
 @endsection
