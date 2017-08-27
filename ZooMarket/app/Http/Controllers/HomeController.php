@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -38,6 +39,19 @@ class HomeController extends Controller
     {
       $categoriesNameList = Category::pluck('name','slug');
       return $categoriesNameList;
+    }
+    public function update(Request $request){
+      dd('funciono');
+      // $user = Auth::user();
+      //
+      // $user->name= $request->name;
+      // $user->surname= $request->surname;
+      // $user->email= $request->email;
+      // $user->phone= $request->phone;
+      //
+      // $user->save();
+      //
+      // return redirect('profile');
     }
 
 }

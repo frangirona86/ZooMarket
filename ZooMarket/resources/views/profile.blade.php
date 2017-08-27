@@ -57,29 +57,12 @@
                         {{ Auth::user()->phone }}
                       </div>
 
-                      {{-- Cambiar contraseña --}}
-                      <div class="col-xxs-12 col-xs-4 col-md-4 col-md-offset-1 well-sm">
-                        Contraseña:
-                      </div>
-                      <div class="col-xxs-12 col-xs-8 col-md-7 well-sm">
-                        <a href="{{ route('change-pass-show') }}">
-                          <button class="btn btn-sm btn-primary">
-                              Cambiar contraseña
-                          </button>
-                        </a>
-                      </div>
+                      <div class="row">
+                        <a href="{{ route('profile-edit') }}" class="btn btn-warning" role="button">Editar Datos Personales</a>
+                        <a href="{{ route('change-pass-show') }}" class="btn btn-primary" role="button">Cambiar Contraseña</a>
+                        <a href="#" class="btn btn-success" role="button">Cambiar Foto Perfil</a>
 
-                      {{-- Cambiar Imagen --}}
-                      <div class="col-xxs-12 col-xs-4 col-md-4 col-md-offset-1 well-sm">
-                        Imagen de perfil:
-                      </div>
-                      <div class="col-xxs-12 col-xs-8 col-md-7 well-sm">
-                        <a>
-                          <button class="btn btn-sm btn-primary">
-                              Cambiar imagen (armar)
-                          </button>
-                        </a>
-                      </div>
+                    </div>
 
                     </div>
 

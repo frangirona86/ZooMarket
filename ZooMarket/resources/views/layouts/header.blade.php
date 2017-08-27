@@ -92,9 +92,6 @@
                         <a href="{{ url('profile') }}">
                             Mi cuenta
                         </a>
-                        <a href="{{ url('product-list') }}">
-                            Mis productos
-                        </a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Cerrar sesion
                         </a>
