@@ -65,6 +65,7 @@
                   <div class="row">
                     <a href="{{ route('profile-edit') }}" class="btn btn-warning" role="button">Editar Datos Personales</a>
                     <a href="{{ route('change-pass-show') }}" class="btn btn-primary" role="button">Cambiar Contraseña</a>
+                    <a href="{{ url('product-list') }}" class="btn btn-success" role="button">Mis Productos</a>
                   </div>
                 </div>
               </div>

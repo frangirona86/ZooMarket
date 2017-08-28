@@ -91,16 +91,16 @@
                     <ul class="dropdown-menu" role="menu">
                       <li>
                         <a href="{{ url('profile') }}">
-                            Mi cuenta
+                            Mi Cuenta
                         </a>
                         <a href="{{ url('profile-edit') }}">
                             Editar Datos Personales
                         </a>
                         <a href="{{ url('product-list') }}">
-                            Mis productos
+                            Mis Productos
                         </a>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Cerrar sesion
+                            Cerrar Sesión
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
