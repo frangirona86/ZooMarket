@@ -2,9 +2,10 @@
 
 @section('content')
 
+
   <header class="business-header" id="bannerIndex">
     <!-- <div class="container"> -->
-        <div class="row">
+        <div class="jumbotron text-center" id="bannerImageContainer">
 
                   <img class="mySlides" src="{{asset('images/index/gatoBanner.jpg')}}" style="width:100%;">
                   <img class="mySlides" src="{{asset('images/index/perroBanner.jpg')}}" style="width:100%; display: none;">
@@ -44,6 +45,7 @@
             <p>Además, si tenes otra mascota, este es tu lugar. Consigue aqui alimentos, juguetes y/o accesorios para tu mascota.</p>
         </div>
     </div>
+
   <script src="{{ asset('js/funciones.js') }}"></script>
 
 @endsection

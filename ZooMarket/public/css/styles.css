@@ -15,6 +15,9 @@
 #navbarCollapse{
   background-color: #99ff99;
 }
+#bannerImageContainer{
+  padding: 0;
+}
 #panels{
   margin-top: 2%;
 }
