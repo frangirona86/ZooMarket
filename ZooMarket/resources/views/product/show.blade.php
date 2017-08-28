@@ -16,7 +16,13 @@
       <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
       <!-- Datos del vendedor y titulo del producto -->
       <h3>{{ $product->title }}</h3>
-      <h5 style="color:#337ab7">vendido por <a href="#">{{ $product->user_id}}</a> · <small style="color:#337ab7">({{$product->quant_sold}} ventas)</small></h5>
+
+
+
+
+
+
+      <h5 style="color:#337ab7">vendido por <a href="#">{{ $userName }}</a> · <small style="color:#337ab7">({{$product->quant_sold}} ventas)</small></h5>
 
       <!-- Precios -->
       <h6 class="title-price"><small>PRECIO OFERTA</small></h6>

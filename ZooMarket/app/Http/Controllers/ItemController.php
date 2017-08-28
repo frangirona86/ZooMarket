@@ -88,15 +88,12 @@ class ItemController extends Controller
         $product = Product::where('id', $id)->first();
         // Guardamos el tipo de formulario, si es Show, Edit o Delete
         $typeOfOperation = 'show';
+
+        $userName = User::where('id', $product->user_id)->first();
+        $userName = $userName->name;
+
         // los retornamos a la vista SHOW dentro de la carpeta PRODUCTS el elemento
-        return view('product.show', compact('product','typeOfOperation'));
-
-        // $users = DB::table('users')
-        //     ->join('products', 'users.id', '=', 'products.user_id')
-        //     ->select('users.name','users.id')
-        //     ->get();
-        // dd($users);exit;
-
+        return view('product.show', compact('product','typeOfOperation' , 'userName'));
 
     }
 
