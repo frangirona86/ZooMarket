@@ -38,6 +38,16 @@ class ProductController extends Controller
          return view('product.list', compact('products','category_slug'));
      }
 
+     // Creamos una funcion para traernos las categorias de ese producto
+     public function titleSearch($titleSearch)
+     {
+         // Traemos el primer registro que traiga el Where
+         $products = Product::where('title','like','%' . $titleSearch . '%')->Paginate(10);
+
+         // los retornamos a la vista LIST dentro de la carpeta PRODUCTS
+         return view('product.list', compact('products'));
+     }
+
      public function pruebaHeader()
      {
          // RETORNAMOS SOLO HEADER PARA PRUEBAS
