@@ -78,18 +78,20 @@
               <textarea class="form-control" name="description" rows="9"></textarea>
             </div>
           </div>
+        </div>
 
           {{-- Boton guardar --}}
-          <div class="row">
-            <div class="col-xxs-12 col-xs-3 col-md-2">
-            </div>
-            <div class="col-xxs-12 col-xs-9 col-md-8" style="text-align: left; margin-top:1.5%;margin-bottom: 1.5%;">
-              <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Guardar cambios</button>
+          <div class="panel panel-default">
+            <div style="padding: 15px 5px 5px 15px;">
+              <div class="row">
+
+                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Guardar cambios</button>
+                <a href="{{ url('product-list') }}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cancelar</button></a>
+              </div>
             </div>
           </div>
+      
 
-
-        </div>
       </div>
     </form>
   </div>
