@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 registerForm">
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="panels">
                     <div class="panel-heading"><strong>{{ Auth::user()->name }}</strong> cambia tu Password</div>
                 <div class="panel-body">
                           @if (Session::has('message'))

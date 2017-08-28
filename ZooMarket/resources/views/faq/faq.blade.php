@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<
+
 <div class="container">
-  <h2>Preguntas frecuentes</h2>
-  <p>Aqui podrá encontrar las inquietudes mas comunes de nuestros usuarios.</p>
+  <h2 id="faqPrinc">Preguntas frecuentes</h2>
+  <p id="faqPrinc">Aqui podrá encontrar las inquietudes mas comunes de nuestros usuarios.</p>
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">

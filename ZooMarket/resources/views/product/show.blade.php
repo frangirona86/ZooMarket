@@ -5,19 +5,18 @@
   {{-- $product --}}
 {{-- Variable con el tipo de operacion, show, edit o delete --}}
   {{-- $typeOfOperation --}}
-
 <div class="container">
-  <div class="row">
+    <div class="row">
     <div class="col-xs-12 col-sm-4 item-photo">
       <img id="jsZoom" style="max-width:100%;"
         src="{{ $product->image->source }}"
         data-zoom-image="{{ $product->image->source }}"
       />
     </div>
-    <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
+      <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
       <!-- Datos del vendedor y titulo del producto -->
       <h3>{{ $product->title }}</h3>
-      <h5 style="color:#337ab7">vendido por <a href="#">Samsung</a> · <small style="color:#337ab7">({{$product->quant_sold}} ventas)</small></h5>
+      <h5 style="color:#337ab7">vendido por <a href="#">{{ $product->user_id}}</a> · <small style="color:#337ab7">({{$product->quant_sold}} ventas)</small></h5>
 
       <!-- Precios -->
       <h6 class="title-price"><small>PRECIO OFERTA</small></h6>

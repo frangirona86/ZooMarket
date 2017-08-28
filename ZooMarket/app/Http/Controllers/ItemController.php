@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Image;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 
 class ItemController extends Controller
@@ -88,6 +90,14 @@ class ItemController extends Controller
         $typeOfOperation = 'show';
         // los retornamos a la vista SHOW dentro de la carpeta PRODUCTS el elemento
         return view('product.show', compact('product','typeOfOperation'));
+
+        // $users = DB::table('users')
+        //     ->join('products', 'users.id', '=', 'products.user_id')
+        //     ->select('users.name','users.id')
+        //     ->get();
+        // dd($users);exit;
+
+
     }
 
     /**

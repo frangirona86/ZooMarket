@@ -34,7 +34,7 @@
                         <a href="https://www.facebook.com/" target="_blank" class="facebook"><img width="35px" src="{{asset('images/footer/facebook-logo-button.png') }}"alt=""></a>
                         <a href="https://www.instagram.com/?hl=es" target="_blank" class="google"><img width="35px" src="{{asset('images/footer/instagram-logo.png') }}" alt=""></a>
                     </div>
-                    <label  class="btn btn-default">Usuarios !</label>
+                    <label  class="btn btn-default">Siguenos!</label>
 
                 </div>
             </div>

@@ -4,7 +4,7 @@
   <div class="container">
       <div class="row">
           <div class="col-xs-12">
-              <div class="panel panel-default">
+              <div class="panel panel-default" id="panels">
                   <div class="panel-heading">Mi cuenta</div>
                   <div class="panel-body">
 

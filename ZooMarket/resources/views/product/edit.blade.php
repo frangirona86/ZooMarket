@@ -4,10 +4,11 @@
   <div class="container">
     {{-- <form class="form-horizontal" id="myForm" method="POST" action="{{ route('register') }}"> --}}
     <form method="POST" action="/product-update/{{$product->id}}" enctype="multipart/form-data">
+      <div class="panel panel-default"  id="panels">
     {{-- <form method="POST" action="product-update/{{$product->id}}"> --}}
       {{ csrf_field() }}
       <div class="row">
-        <div class="col-xs-12 col-sm-4 item-photo">
+        <div class="col-xs-12 col-sm-3 item-photo" style="margin-left:1%">
           <div>
             <div id="changeImageDiv">
               <img id="imgView" style="max-width:100%;" src="{{ $product->image->source }}"/>
@@ -17,8 +18,7 @@
             </div>
           </div>
         </div>
-
-        <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
+      <div id="productDetail" class="col-xs-8" style="border:0px solid gray">
           {{-- Titulo --}}
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
@@ -98,7 +98,7 @@
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
             </div>
-            <div class="col-xxs-12 col-xs-9 col-md-8" style="text-align: left;">
+            <div class="col-xxs-12 col-xs-9 col-md-8" style="text-align: left; margin-top:1.5%; margin-bottom:1.5%">
               <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Guardar cambios</button>
             </div>
           </div>
@@ -106,6 +106,7 @@
       </div>
     </form>
   </div>
+</div>
 
 <script>
   //Funcion MAS
@@ -139,7 +140,7 @@
         }
       }
       reader.readAsDataURL(input.files[0]);
-    } 
+    }
   }
 
 </script>

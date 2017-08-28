@@ -83,7 +83,7 @@
           <div class="row">
             <div class="col-xxs-12 col-xs-3 col-md-2">
             </div>
-            <div class="col-xxs-12 col-xs-9 col-md-8" style="text-align: left;">
+            <div class="col-xxs-12 col-xs-9 col-md-8" style="text-align: left; margin-top:1.5%;margin-bottom: 1.5%;">
               <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Guardar cambios</button>
             </div>
           </div>

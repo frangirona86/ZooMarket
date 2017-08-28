@@ -11,7 +11,7 @@
               @endphp
 
               @if ($productUser)
-                <div class="panel panel-default">
+                <div class="panel panel-default"  id="panels">
                   <div class="panel-heading">Crear nuevo producto</div>
                   <div style="padding: 15px 5px 5px 15px;">
                     <a href="product-create/"><button class="btn btn-md btn-primary">Nuevo producto</button></a>

@@ -19,15 +19,15 @@
               {{-- Menu principal --}}
               <ul id="headerMainMenu" class="nav navbar-nav">
                   <li class="dropdown">
-                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Menu <b class="caret"></b></a>
-                      <ul class="dropdown-menu">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#" id="barCatPrin">Menu <b class="caret"></b></a>
+                      <ul class="dropdown-menu" id="barCat">
 
                         {{-- Llenamos el menu con la lista de las categorias --}}
                         @php
                           $categoryList = App\Category::orderBy('name', 'ASC')->pluck('name','slug');
                           foreach ($categoryList as $slug => $categoryName) {
                             @endphp
-                              <li><a href="{{ route('category-product', [$slug]) }}">{{ $categoryName }}</a></li>
+                              <li id="barCat"><a href="{{ route('category-product', [$slug]) }}">{{ $categoryName }}</a></li>
                             @php
                           }
                         @endphp

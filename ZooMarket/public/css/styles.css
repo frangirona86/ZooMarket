@@ -12,13 +12,39 @@
   filter: grayscale(100%);
 
 }
+#navbarCollapse{
+  background-color: #99ff99;
+}
+#panels{
+  margin-top: 2%;
+}
+#barCat{
+    background-color: #bff4bf !important;
+}
+#barCatPrin{
+  background-color: #99ff99;
+}
+.top-right {
+      background-color: #99ff99 !important;
+}
+.sectionPort{
+  margin-bottom: 2%;
+}
 #myIndex .sectionPort img{
   margin-left: 15%!important;
 }
+#faqPrinc{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
 .flex-center {
     align-items: center;
     display: flex;
     justify-content: center;
+}
+.navbar-header{
+  background-color: #99ff99!important;
 }
 
 .position-ref {
@@ -67,6 +93,7 @@
     color: white;
     padding-top: 30px;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 #myFooter .footer-copyright {
@@ -217,7 +244,9 @@
     #bannerIndex{
       display: none;
     }
+
 }
+
 @media screen and (max-width:988px){
   .logoFooter img {
     margin-left: 0;
