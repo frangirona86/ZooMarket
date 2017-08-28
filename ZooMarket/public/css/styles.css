@@ -229,11 +229,14 @@
         transform: rotate(90deg);
         color: #454444;
     }
-
+.logoFooter img{
+    margin-right: 10%;
+    margin-top: 10%;
+}
  @media screen and (max-width:988px){
-   .logoFooter img{
-     margin-left: -56px;
-     margin-top: 20%;
+   .logoFooter img {
+       margin-left: -30%;
+       margin-top: 29%;
    }
 
  }
@@ -244,15 +247,16 @@
     #bannerIndex{
       display: none;
     }
-
+    .logoFooter img {
+      margin-left: 10%;
+      margin-top: 0;
+    }
+ #headerMainLogo{
+   margin-left: 27%!important;
+ }
 }
 
-@media screen and (max-width:988px){
-  .logoFooter img {
-    margin-left: 0;
-    margin-top: 0;
-  }
-}
+
 
 
 /* CSS used for positioning the footers at the bottom of the page. */
@@ -282,8 +286,6 @@ body{
 }
 
 
-
-/* Customize the text color and shadow color and to optimize text legibility. */
 
 .tagline {
     text-shadow: 0 0 10px #000;
